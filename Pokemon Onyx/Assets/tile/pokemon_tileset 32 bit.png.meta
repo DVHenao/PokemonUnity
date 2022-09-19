@@ -1996,7 +1996,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2324,15 +2324,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_105
+      name: Water TM
       rect:
         serializedVersion: 2
-        x: 624
-        y: 1903
-        width: 241
-        height: 97
+        x: 640
+        y: 1983
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7624,7 +7624,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7632,6 +7632,174 @@ TextureImporter:
       bones: []
       spriteID: 40429991b07c9494fbe8df1754a6ddf7
       internalID: 567459033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waterTL
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1983
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124a828f9583c8e4890e8c1c9782be31
+      internalID: 74393141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water LR
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1967
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa56b3dbf6e6bda44941b0d525a0e7bb
+      internalID: -1988894150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water TR
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1983
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890f545b4d7f65f49bfc45463010b369
+      internalID: 1728162946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water BL
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1951
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225cebba28919e54f8562768d6f09d6d
+      internalID: -126280058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water R
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1967
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8701419e6a2aa584eaed1b6b93980dd3
+      internalID: -197937839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water BM
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1951
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee12533a06aadc4480974f734d1063e
+      internalID: 1697773424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water C
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1967
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2aaa97a36b92c048a2e23bde5cd711f
+      internalID: 2137739484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water BR
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1951
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d552294701edc34c8332e5b29885c8a
+      internalID: -377807732
       vertices: []
       indices: 
       edges: []
@@ -7668,7 +7836,9 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_178: 957115778
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_257: 1457221327
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_221: 1193276650
+      Water TR: 1728162946
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_140: 1857591216
+      waterTL: 74393141
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_226: 145036164
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_181: 34902830
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_195: -1079737386
@@ -7716,6 +7886,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_49: -786693051
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_124: -1499621160
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_274: -114061487
+      Water BR: -377807732
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_183: 109856139
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_271: 451411529
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_317: 1179362184
@@ -7729,6 +7900,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_32: 2084688196
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_87: -323567308
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_15: -298327541
+      Water BL: -126280058
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_27: -586174818
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_12: -1278816249
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_187: 1405570830
@@ -7743,6 +7915,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_106: -1701640407
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_172: -757723430
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_346: 38255435
+      Water LR: -1988894150
       pokemart: 1055764975
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_330: -462466165
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_312: -1743883386
@@ -7753,6 +7926,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_9: -563961546
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_168: 1293937065
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_123: -546204734
+      Water R: -197937839
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_319: -1709784375
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_35: 171726644
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_302: -488371659
@@ -7791,6 +7965,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_1: -336601845
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_20: -1555388065
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_138: 1565339974
+      Water BM: 1697773424
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_227: -1394193979
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_320: 584819012
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_161: -1279087807
@@ -7848,16 +8023,18 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_301: -2060782024
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_326: 753433863
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_13: 845370108
+      Water TM: -688152228
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_182: 671260979
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_323: -1012861488
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_186: 34606972
+      Water C: 2137739484
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_116: 1177151276
-      pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_199: -195510079
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_289: 2142706195
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_58: -209387001
-      pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_296: 1027968195
+      pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_199: -195510079
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_136: 1513000117
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_113: 709662097
+      pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_296: 1027968195
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_275: -897397628
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_69: 1620652249
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_8: 1583279386
@@ -7925,12 +8102,11 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_171: 90100511
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_14: -570277789
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_238: -1791611738
-      pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_105: -688152228
+      pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_325: -1211979719
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_165: -604989065
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_67: 513503895
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_135: 1029404884
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_314: -1873012457
-      pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_325: -1211979719
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_194: 139834314
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_61: 927002928
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_92: -1699057581
