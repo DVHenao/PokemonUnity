@@ -3,7 +3,7 @@ guid: a87fc65241ddfce4fbe872f33c46e441
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,6 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1985,15 +1988,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_89
+      name: Walkable Grass 2
       rect:
         serializedVersion: 2
-        x: 15
-        y: 2016
-        width: 466
-        height: 145
+        x: 48
+        y: 2065
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7612,6 +7615,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Walkable Grass1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40429991b07c9494fbe8df1754a6ddf7
+      internalID: 567459033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -7629,6 +7653,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_55: 1508819425
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_201: 2098403010
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_203: -1538638115
+      Walkable Grass1: 567459033
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_270: 1259109339
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_287: 2126458368
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_327: 810358443
@@ -7652,6 +7677,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_64: 2114492460
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_285: 392009169
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_315: -612893523
+      Walkable Grass 2: -775575466
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_114: 225457922
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_305: -103471837
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_340: 1392171553
@@ -7768,7 +7794,6 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_227: -1394193979
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_320: 584819012
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_161: -1279087807
-      pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_89: -775575466
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_97: 1619563872
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_73: -1173716994
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_94: 2065979148
@@ -7982,7 +8007,6 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_51: -452136357
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
