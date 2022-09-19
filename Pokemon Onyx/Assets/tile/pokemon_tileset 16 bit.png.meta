@@ -1991,8 +1991,8 @@ TextureImporter:
       name: Walkable Grass 2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 2065
+        x: 49
+        y: 2064
         width: 16
         height: 16
       alignment: 0
@@ -7619,7 +7619,7 @@ TextureImporter:
       name: Walkable Grass1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 49
         y: 2048
         width: 16
         height: 16
