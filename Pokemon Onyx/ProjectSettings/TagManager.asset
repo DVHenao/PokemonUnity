@@ -13,7 +13,7 @@ TagManager:
   - UI
   - SolidObjects
   - Folliage
-  - 
+  - Bridges
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 4112951725
+    locked: 0
+  - name: Non-SolidObjects
+    uniqueID: 1747044939
     locked: 0
   - name: Player
     uniqueID: 2045432911

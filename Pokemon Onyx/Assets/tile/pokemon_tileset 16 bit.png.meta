@@ -7808,9 +7808,9 @@ TextureImporter:
       name: waterfall
       rect:
         serializedVersion: 2
-        x: 673
-        y: 1904
-        width: 47
+        x: 672
+        y: 1903
+        width: 48
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -7821,6 +7821,90 @@ TextureImporter:
       bones: []
       spriteID: 2a777132a7a45b9459b3495c65dd521e
       internalID: -778886393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTLCorner
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1935
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9140ada211fe5e847b9a08d968e43808
+      internalID: 1598393553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTRCorner
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1935
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efc4f78b409da044bf66375e53b7efe
+      internalID: -719683927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterBLCorner
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1921
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900cc22e190b97f4eb1112df29ebd9c6
+      internalID: -1468197328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterBRCorner
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1921
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d6f8950a9208e4288aecb77b25a4be
+      internalID: 798771284
       vertices: []
       indices: 
       edges: []
@@ -7837,6 +7921,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_175: 269418139
+      WaterBLCorner: -1468197328
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_95: 1911298831
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_62: -1010149548
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_55: 1508819425
@@ -7958,6 +8043,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_154: -1736602134
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_36: -1753624791
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_121: -1552980757
+      WaterTRCorner: -719683927
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_119: -1585675160
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_3: -276341234
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_344: -205738846
@@ -8004,6 +8090,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_313: -2040141445
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_220: -1897801481
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_101: -274469785
+      WaterTLCorner: 1598393553
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_250: -1998295018
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_206: 1520175345
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_38: 1811083437
@@ -8197,6 +8284,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_209: -1125320115
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_211: -1615958848
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_164: -391802936
+      WaterBRCorner: 798771284
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_223: -505540735
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_191: 1481421345
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_141: -1894569706

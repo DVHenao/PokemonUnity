@@ -2332,7 +2332,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3713,8 +3713,8 @@ TextureImporter:
       name: pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_171
       rect:
         serializedVersion: 2
-        x: 495
-        y: 1403
+        x: 544
+        y: 1394
         width: 384
         height: 212
       alignment: 0
@@ -7645,7 +7645,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7666,7 +7666,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7687,7 +7687,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7708,7 +7708,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7729,7 +7729,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7750,7 +7750,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7771,7 +7771,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7792,7 +7792,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7800,6 +7800,27 @@ TextureImporter:
       bones: []
       spriteID: 9d552294701edc34c8332e5b29885c8a
       internalID: -377807732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1504
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527e2ac9cc667494494daa51532b84d1
+      internalID: -876109172
       vertices: []
       indices: 
       edges: []
@@ -7877,6 +7898,7 @@ TextureImporter:
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_304: -1888679813
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_163: 941094405
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_269: 1634787235
+      Bridge: -876109172
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_224: -486634980
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_16: -752985028
       pokemon_tileset_from_public_tiles_by_chaoticcherrycake_d5xdb0y_159: 742693834
