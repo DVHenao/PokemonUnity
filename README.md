@@ -4,7 +4,9 @@
 
 Links for Video describing things
 
-Exercise 1:https://youtu.be/-Kh5TA5cyk4
+Exercise 1:https://www.youtube.com/watch?v=-Kh5TA5cyk4
+Exercise 2:https://www.youtube.com/watch?v=LDfQBtazDOA
+Exercise 3:https://www.youtube.com/watch?v=9nV8H5amOGY
 
 
 sources
