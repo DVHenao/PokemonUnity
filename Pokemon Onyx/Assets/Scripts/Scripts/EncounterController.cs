@@ -10,7 +10,7 @@ public class EncounterController : MonoBehaviour
     [SerializeField]
     public GameObject Canvas;
     [SerializeField]
-    public GameObject EventSystem;
+    public GameObject playerController;
 
     public GameObject MainPokemon;
 
@@ -46,9 +46,11 @@ public class EncounterController : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            MainCamera.SetActive(false);
-            Canvas.SetActive(false);
-            EventSystem.SetActive(false);
+            SceneManager.UnloadSceneAsync("EncounterScene");
+ 
+            PlayerController.encounterActive = false;
+
         }
+
     }
 }

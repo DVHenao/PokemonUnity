@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour
     public bool isMoving;
     private bool isSprinting;
     private Vector2 input;
+    static public bool encounterActive;
+
+    public GameObject player;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        encounterActive = false;
     }
 
     // Update is called once per frame
@@ -29,24 +32,29 @@ public class PlayerController : MonoBehaviour
         else
             moveSpeed = 3;
 
-        if(!isMoving)
+
+        if (encounterActive == false)
         {
-
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
-
-            if (input != Vector2.zero)
+            
+            if (!isMoving)
             {
-                var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
+                
+                input.x = Input.GetAxisRaw("Horizontal");
+                input.y = Input.GetAxisRaw("Vertical");
 
-                if (IsWalkable(targetPos))
-                { 
-                    StartCoroutine(Move(targetPos));
+                if (input != Vector2.zero)
+                {
+                    var targetPos = transform.position;
+                    targetPos.x += input.x;
+                    targetPos.y += input.y;
 
-                    RandGrassEnounter(targetPos);
+                    if (IsWalkable(targetPos))
+                    {
+                        StartCoroutine(Move(targetPos));
 
+                        RandGrassEnounter(targetPos);
+
+                    }
                 }
             }
         }
@@ -95,6 +103,7 @@ void RandGrassEnounter (Vector3 targetPos)
                 Debug.Log("Encounter!");
 
                 SceneManager.LoadScene("EncounterScene", LoadSceneMode.Additive);
+                encounterActive = true;
 
             }
         }
