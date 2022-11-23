@@ -1673,14 +1673,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 113f26d986501cc488103c9d33e81102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerSkillPannel: {fileID: 0}
+  PlayerSkillPannel: {fileID: 1114957418}
   EnemySkillPannel: {fileID: 0}
   PlayerDesc: {fileID: 0}
   EnemyDesc: {fileID: 0}
   GameDesc: {fileID: 0}
-  Player: {fileID: 0}
+  Player: {fileID: 2013399753}
   Enemy: {fileID: 0}
-  SkillButtonPrefab: {fileID: 0}
+  SkillButtonPrefab: {fileID: 6010400261119617791, guid: c55869bc08c352049ab4d35846e43e0b, type: 3}
 --- !u!4 &1226665355
 Transform:
   m_ObjectHideFlags: 0
@@ -3118,7 +3118,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3405,7 +3405,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

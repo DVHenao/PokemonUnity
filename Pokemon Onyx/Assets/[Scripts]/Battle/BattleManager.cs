@@ -25,6 +25,7 @@ public class BattleManager : MonoBehaviour
     {
         // set Player
         Player.status = FindObjectOfType<DataTransfer>().playerStatus;
+        Enemy = FindObjectOfType<Enemy>();
     }
 
     
@@ -34,26 +35,30 @@ public class BattleManager : MonoBehaviour
         foreach (var skill in Player.status.AttackSkillList)
         {
             GameObject btn = Instantiate(battleSceneManager.SkillButtonPrefab, battleSceneManager.PlayerSkillPannel.transform);
-            btn.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = skill.skillName;
+            SkillButtonUI skillBtn = btn.GetComponent<SkillButtonUI>();
+            skillBtn.SetSkillNameText(skill.skillName);
+            skillBtn.SetCostText(skill.manaCost.ToString());
             btn.GetComponent<Button>().onClick.AddListener(() =>
             {
-                battleSceneManager.PlayerDesc.text = skill.Effect;
-                Player.status.Mana -= skill.manaCost;
-                Enemy.status.HP -= skill.damageValue;
-                StartCoroutine(SetTurnSetting());
+                //battleSceneManager.PlayerDesc.text = skill.Effect;
+                //Player.status.Mana -= skill.manaCost;
+                //Enemy.status.HP -= skill.damageValue;
+                //StartCoroutine(SetTurnSetting());
             });
 
         }
         foreach (var skill in Player.status.CureSkillList)
         {
             GameObject btn = Instantiate(battleSceneManager.SkillButtonPrefab, battleSceneManager.PlayerSkillPannel.transform);
-            btn.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = skill.skillName;
+            SkillButtonUI skillBtn = btn.GetComponent<SkillButtonUI>();
+            skillBtn.SetSkillNameText(skill.skillName);
+            skillBtn.SetCostText(skill.manaCost.ToString());
             btn.GetComponent<Button>().onClick.AddListener(() =>
             {
-                battleSceneManager.PlayerDesc.text = skill.Effect;
-                Player.status.Mana -= skill.manaCost;
-                Player.status.HP += skill.healValue;
-                StartCoroutine(SetTurnSetting());
+                //battleSceneManager.PlayerDesc.text = skill.Effect;
+                //Player.status.Mana -= skill.manaCost;
+                //Player.status.HP += skill.healValue;
+                //StartCoroutine(SetTurnSetting());
             });
 
         }
@@ -71,15 +76,15 @@ public class BattleManager : MonoBehaviour
         //}
 
         CurrentTurn = Turn.PLAYER;
-        battleSceneManager.SetTurn(CurrentTurn);
+        //battleSceneManager.SetTurn(CurrentTurn);
     }
 
     private void Update()
     {
-        if (Enemy.status.HP <= 0)
-        {
-            battleSceneManager.UnLoadScene();
-        }
+        //if (Enemy.status.HP <= 0)
+        //{
+        //    battleSceneManager.UnLoadScene();
+        //}
 
     }
     public IEnumerator SetTurnSetting()

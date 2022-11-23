@@ -49,10 +49,10 @@ public class PlayerController : MonoBehaviour
 
         if (encounterActive == false)
         {
-            
+
             if (!isMoving)
             {
-                
+
                 input.x = Input.GetAxisRaw("Horizontal");
                 input.y = Input.GetAxisRaw("Vertical");
 
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
                 {
                     playerDirection = PlayerDirection.LEFT;
                 }
-                
+
 
                 if (input != Vector2.zero)
                 {
@@ -92,6 +92,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            LoadEncounterScene();
+        }
+
     }
 
 
@@ -102,8 +107,8 @@ public class PlayerController : MonoBehaviour
         animator.SetInteger("step", stepOrder);
         animator.SetInteger("direction", (int)playerDirection);
         animator.SetInteger("speed", 1);
-        
-        while ((targetPos - transform.position).sqrMagnitude>Mathf.Epsilon)
+
+        while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
@@ -113,7 +118,7 @@ public class PlayerController : MonoBehaviour
         isMoving = false;
     }
 
-private bool IsWalkable(Vector3 targetPos)
+    private bool IsWalkable(Vector3 targetPos)
     {
         if (Physics2D.OverlapCircle(targetPos, 0.1f, SolidObjectsLayer) != null)
         {
@@ -124,28 +129,33 @@ private bool IsWalkable(Vector3 targetPos)
     }
 
 
-void RandGrassEnounter (Vector3 targetPos)
+    void RandGrassEnounter(Vector3 targetPos)
     {
         int encounterRoll = 0;
 
         if (Physics2D.OverlapCircle(targetPos, 0.1f, FolliageLayer) != null)
         {
-            
+
             if (moveSpeed == 5)
                 encounterRoll = Random.Range(0, 6);
-            else if(moveSpeed == 3)
+            else if (moveSpeed == 3)
                 encounterRoll = Random.Range(0, 10);
             Debug.Log(encounterRoll);
 
             if (encounterRoll == 0)
             {
                 Debug.Log("Encounter!");
-
-                SceneManager.LoadScene("EncounterScene", LoadSceneMode.Additive);
+                LoadEncounterScene();
                 encounterActive = true;
 
             }
         }
+    }
+
+    private void LoadEncounterScene()
+    {
+        FindObjectOfType<DataTransfer>().SetPlayerStatusForBattle();
+        SceneManager.LoadScene("EncounterScene", LoadSceneMode.Additive);
     }
 
     private void OnDrawGizmos()

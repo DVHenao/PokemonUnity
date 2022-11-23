@@ -24186,13 +24186,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665277442}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.40855673, y: 1.51369, z: -595.64233}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1706918498}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &752083892
 GameObject:
@@ -26173,6 +26173,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661472684}
   m_CullTransparentMesh: 1
+--- !u!1 &1706918497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706918498}
+  m_Layer: 0
+  m_Name: Systems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706918498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706918497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.40855673, y: -1.51369, z: 595.64233}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 665277445}
+  - {fileID: 1902266292}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1902266291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902266292}
+  - component: {fileID: 1902266293}
+  m_Layer: 0
+  m_Name: DataTransfer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1902266292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902266291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1706918498}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1902266293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902266291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602b8b2eae26ff44b071d7a45b326d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStatus:
+    HP: 0
+    Mana: 0
+    AttackSkillList: []
+    CureSkillList: []
 --- !u!1 &2036961684
 GameObject:
   m_ObjectHideFlags: 0
@@ -34292,6 +34374,34 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.HP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.Mana
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.CureSkillList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.CureSkillList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f3e6dfb14ea798e47ab00fde96714952, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1bc8c8b1255964243a4ca60869971bdb, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f9c3446914c55fc4ea29c33922070258, type: 2}
     - target: {fileID: 5844711826730892266, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
       propertyPath: m_RootOrder
       value: 2

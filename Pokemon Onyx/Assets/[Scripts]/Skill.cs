@@ -14,6 +14,7 @@ public class Skill :ScriptableObject
 {
     public string skillName;
     public int damageValue;
+    public float accuracyRate;
     public int healValue;
     public int manaCost;
     public string Effect;

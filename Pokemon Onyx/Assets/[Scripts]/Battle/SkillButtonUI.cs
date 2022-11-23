@@ -16,13 +16,13 @@ public class SkillButtonUI : MonoBehaviour
         
     }
 
-    void SetSkillNameText(string text)
+    public void SetSkillNameText(string text)
     {
         skillNameText.text = text;
     }
 
-    void SetCostText(string text)
+    public void SetCostText(string text)
     {
-        skillNameText.text = text;
+        costText.text = text;
     }
 }

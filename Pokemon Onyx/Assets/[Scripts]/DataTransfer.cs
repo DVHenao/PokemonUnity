@@ -21,6 +21,6 @@ public class DataTransfer : MonoBehaviour
 
     public void SetPlayerStatusForBattle()
     {
-        playerStatus = GameObject.Find("Player").GetComponent<Player>().status;
+        playerStatus = GameObject.Find("PlayerCharacter").GetComponent<Player>().status;
     }
 }
