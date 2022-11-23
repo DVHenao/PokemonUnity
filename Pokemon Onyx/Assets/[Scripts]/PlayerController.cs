@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+public enum PlayerDirection
+{
+    UP = 1,
+    RIGHT = 2,
+    DOWN = 3,
+    LEFT = 4,
+}
+
 public class PlayerController : MonoBehaviour
 {
 
@@ -14,13 +23,18 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     static public bool encounterActive;
 
-    public GameObject player;
+    private Animator animator;
 
+    private PlayerDirection playerDirection;
+    private int stepOrder = 0;
+
+    private Vector2 test;
 
     // Start is called before the first frame update
     void Start()
     {
         encounterActive = false;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,12 +56,31 @@ public class PlayerController : MonoBehaviour
                 input.x = Input.GetAxisRaw("Horizontal");
                 input.y = Input.GetAxisRaw("Vertical");
 
+
+                if (input.y > 0.0f)
+                {
+                    playerDirection = PlayerDirection.UP;
+                }
+                else if (input.y < 0.0f)
+                {
+                    playerDirection = PlayerDirection.DOWN;
+                }
+                else if (input.x > 0.0f)
+                {
+                    playerDirection = PlayerDirection.RIGHT;
+                }
+                else if (input.x < 0.0f)
+                {
+                    playerDirection = PlayerDirection.LEFT;
+                }
+                
+
                 if (input != Vector2.zero)
                 {
                     var targetPos = transform.position;
                     targetPos.x += input.x;
                     targetPos.y += input.y;
-
+                    test = targetPos;
                     if (IsWalkable(targetPos))
                     {
                         StartCoroutine(Move(targetPos));
@@ -65,12 +98,18 @@ public class PlayerController : MonoBehaviour
     IEnumerator Move(Vector3 targetPos)
     {
         isMoving = true;
-        while((targetPos - transform.position).sqrMagnitude>Mathf.Epsilon)
+        stepOrder = stepOrder == 0 ? 1 : 0;
+        animator.SetInteger("step", stepOrder);
+        animator.SetInteger("direction", (int)playerDirection);
+        animator.SetInteger("speed", 1);
+        
+        while ((targetPos - transform.position).sqrMagnitude>Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
         transform.position = targetPos;
+        animator.SetInteger("speed", 0);
         isMoving = false;
     }
 
@@ -107,5 +146,11 @@ void RandGrassEnounter (Vector3 targetPos)
 
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(test, 0.1f);
     }
 }
