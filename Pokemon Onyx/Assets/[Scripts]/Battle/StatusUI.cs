@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class StatusUI : MonoBehaviour
 {
-
-    public TMPro.TextMeshProUGUI NameText { get; }
+    [SerializeField]
+    public TMPro.TextMeshProUGUI NameText;
 
     [SerializeField]
     private Slider hpSlider;
@@ -32,11 +32,13 @@ public class StatusUI : MonoBehaviour
     public void SetHpSlider(float hp, float maxHP)
     {
         hpSlider.value = hp/maxHP;
+        SetHPText(hp, maxHP);
     }
 
     public void SetMpSlider(float mp, float maxMP)
     {
-        hpSlider.value = mp / maxMP;
+        mpSlider.value = mp / maxMP;
+        SetMPText(mp, maxMP);
     }
 
     public void SetHPText(float hp, float maxHP)
@@ -46,7 +48,7 @@ public class StatusUI : MonoBehaviour
 
     public void SetMPText(float mp, float maxMP)
     {
-        hpText.text = mp.ToString() + " / " + maxMP.ToString();
+        mpText.text = mp.ToString() + " / " + maxMP.ToString();
     }
 
 }

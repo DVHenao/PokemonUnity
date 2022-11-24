@@ -6,17 +6,29 @@ using UnityEngine;
 
 public class BattleSceneManager : MonoBehaviour
 {
+    public StatusUI playerStatusUI;
+    public StatusUI EnemyStatusUI;
+
     public GameObject PlayerSkillPannel;
     public GameObject EnemySkillPannel;
 
-    public TMPro.TextMeshProUGUI PlayerDesc;
-    public TMPro.TextMeshProUGUI EnemyDesc;
-    public TMPro.TextMeshProUGUI GameDesc;
-
-    public Character Player;
-    public Character Enemy;
+    public TMPro.TextMeshProUGUI BattleDescrition;
+   
 
     public GameObject SkillButtonPrefab;
+
+    public BattleManager battleManager;
+
+
+    public void UpdateStatusUI()
+    {
+        playerStatusUI.SetHpSlider(battleManager.Player.status.HP, battleManager.Player.status.MaxHP);
+        playerStatusUI.SetMpSlider(battleManager.Player.status.Mana, battleManager.Player.status.MaxMana);
+
+        EnemyStatusUI.SetHpSlider(battleManager.Enemy.status.HP, battleManager.Enemy.status.MaxHP);
+        EnemyStatusUI.SetMpSlider(battleManager.Enemy.status.Mana, battleManager.Enemy.status.MaxMana);
+
+    }
 
 
     public void SetTurn(Turn turn)
@@ -52,6 +64,6 @@ public class BattleSceneManager : MonoBehaviour
     public void UnLoadScene()
     {
         //SoundManager.Instance.PlayBgm("PlayScene", 2.0f);
-        SceneManager.UnloadScene("BattleScene");
+        SceneManager.UnloadScene("EncounterScene");
     }
 }

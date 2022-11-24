@@ -7,9 +7,39 @@ public class Status
 {
     [Header("Statsus")]
     public int HP;
+    public int MaxHP;
     public int Mana;
+    public int MaxMana;
     [Header("Skills")]
     public List<Skill> AttackSkillList;
     public List<Skill> CureSkillList;
 
+
+    public void Heal(int val)
+    {
+        HP += val;
+        if (HP > MaxHP)
+        {
+            HP = MaxHP;
+        }
+    }
+
+    public void Damaged(int damage)
+    {
+        HP -= damage;
+        if (HP < 0)
+        {
+            HP = 0;
+        }
+    }
+
+    public void UseMana(int mana)
+    {
+        Mana -= mana;
+        if (Mana < 0)
+        {
+            Mana = 0;
+        }
+
+    }
 }

@@ -42,7 +42,6 @@ public class EnemyAIController
 
         self.status.Mana -= skillPicked.manaCost;
 
-        self.battleManager.battleSceneManager.EnemyDesc.text = skillPicked.Effect;
         self.battleManager.Player.status.HP -= skillPicked.damageValue;
 
         return true;
@@ -62,7 +61,6 @@ public class EnemyAIController
 
         self.status.Mana -= skillPicked.manaCost;
 
-        self.battleManager.battleSceneManager.EnemyDesc.text = skillPicked.Effect;
 
         self.status.HP += skillPicked.healValue;
 

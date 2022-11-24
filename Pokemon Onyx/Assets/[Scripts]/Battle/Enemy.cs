@@ -11,6 +11,8 @@ public enum EnemyState
 
 public class Enemy : Character
 {
+    public string Name;
+
     public BattleManager battleManager;
     public EnemyState currentState;
 

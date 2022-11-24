@@ -26252,7 +26252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStatus:
     HP: 0
+    MaxHP: 0
     Mana: 0
+    MaxMana: 0
     AttackSkillList: []
     CureSkillList: []
 --- !u!1 &2036961684
@@ -34380,6 +34382,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
       propertyPath: status.Mana
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.MaxHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.MaxMana
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}

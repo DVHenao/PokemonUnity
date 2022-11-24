@@ -11,7 +11,8 @@ public enum Turn
 }
 public class BattleManager : MonoBehaviour
 {
-    
+
+    public List<GameObject> enemyPrefabs;
 
     public BattleSceneManager battleSceneManager;
 
@@ -25,7 +26,10 @@ public class BattleManager : MonoBehaviour
     {
         // set Player
         Player.status = FindObjectOfType<DataTransfer>().playerStatus;
-        Enemy = FindObjectOfType<Enemy>();
+        
+        int random = Random.Range(0, enemyPrefabs.Count);
+        var obj = Instantiate(enemyPrefabs[random]);
+        Enemy = obj.GetComponent<Enemy>();
     }
 
     
@@ -40,10 +44,14 @@ public class BattleManager : MonoBehaviour
             skillBtn.SetCostText(skill.manaCost.ToString());
             btn.GetComponent<Button>().onClick.AddListener(() =>
             {
-                //battleSceneManager.PlayerDesc.text = skill.Effect;
-                //Player.status.Mana -= skill.manaCost;
-                //Enemy.status.HP -= skill.damageValue;
-                //StartCoroutine(SetTurnSetting());
+                if (Player.status.Mana >= skill.manaCost)
+                {
+                    battleSceneManager.BattleDescrition.text = skill.Effect;
+                    Player.status.UseMana(skill.manaCost);
+                    Enemy.status.Damaged(skill.damageValue);
+                    battleSceneManager.UpdateStatusUI();
+                    StartCoroutine(SetTurnSetting());
+                }
             });
 
         }
@@ -55,13 +63,23 @@ public class BattleManager : MonoBehaviour
             skillBtn.SetCostText(skill.manaCost.ToString());
             btn.GetComponent<Button>().onClick.AddListener(() =>
             {
-                //battleSceneManager.PlayerDesc.text = skill.Effect;
-                //Player.status.Mana -= skill.manaCost;
-                //Player.status.HP += skill.healValue;
-                //StartCoroutine(SetTurnSetting());
+                if (Player.status.Mana >= skill.manaCost)
+                {
+                    battleSceneManager.BattleDescrition.text = skill.Effect;
+                    Player.status.UseMana(skill.manaCost);
+                    Player.status.Heal(skill.healValue);
+                    battleSceneManager.UpdateStatusUI();
+                    StartCoroutine(SetTurnSetting());
+                }
             });
 
         }
+
+        battleSceneManager.EnemyStatusUI.SetName(Enemy.Name);
+        battleSceneManager.EnemyStatusUI.SetHPText(Enemy.status.HP, Enemy.status.MaxHP);
+        battleSceneManager.EnemyStatusUI.SetMPText(Enemy.status.Mana, Enemy.status.MaxMana);
+
+
 
         //foreach (var skill in Enemy.status.AttackSkillList)
         //{
@@ -81,30 +99,30 @@ public class BattleManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Enemy.status.HP <= 0)
-        //{
-        //    battleSceneManager.UnLoadScene();
-        //}
+        if (Enemy.status.HP <= 0)
+        {
+            battleSceneManager.UnLoadScene();
+        }
 
     }
     public IEnumerator SetTurnSetting()
     {
-        battleSceneManager.SetClickPannelDisable(CurrentTurn);
+        //battleSceneManager.SetClickPannelDisable(CurrentTurn);
         yield return new WaitForSeconds(2.0f);
-        battleSceneManager.PlayerDesc.text = "";
-        battleSceneManager.EnemyDesc.text = "";
-        ChangedTurn();
+        //battleSceneManager.PlayerDesc.text = "";
+        //battleSceneManager.EnemyDesc.text = "";
+        //ChangedTurn();
         
     }
 
     public void ChangedTurn()
     {
-        CurrentTurn = CurrentTurn == Turn.PLAYER ? Turn.ENEMY : Turn.PLAYER;
-        battleSceneManager.SetTurn(CurrentTurn);
-        if (CurrentTurn == Turn.ENEMY)
-        {
-            Enemy.ExcuteAI();
-            StartCoroutine(SetTurnSetting());
-        }
+        //CurrentTurn = CurrentTurn == Turn.PLAYER ? Turn.ENEMY : Turn.PLAYER;
+        //battleSceneManager.SetTurn(CurrentTurn);
+        //if (CurrentTurn == Turn.ENEMY)
+        //{
+        //    Enemy.ExcuteAI();
+        //    StartCoroutine(SetTurnSetting());
+        //}
     }
 }
