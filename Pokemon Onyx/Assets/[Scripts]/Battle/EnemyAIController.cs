@@ -48,6 +48,7 @@ public class EnemyAIController
         //self.status.Mana -= skillPicked.manaCost;
         self.battleManager.Player.status.Damaged(skillPicked.damageValue);
         //self.battleManager.Player.status.HP -= skillPicked.damageValue;
+        self.battleManager.StartCoroutine(self.battleManager.StartBattleSequenc());
 
         return true;
     }
@@ -71,7 +72,7 @@ public class EnemyAIController
         //self.status.Mana -= skillPicked.manaCost;
         self.status.Heal(skillPicked.healValue);
         //self.status.HP += skillPicked.healValue;
-
+        self.battleManager.StartCoroutine(self.battleManager.StartHealSequenc());
         return true;
     }
 }

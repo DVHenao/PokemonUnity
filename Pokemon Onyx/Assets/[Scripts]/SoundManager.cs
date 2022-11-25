@@ -9,7 +9,6 @@ public class CustomAudio
 {
     public AudioClip audioClip = null;
     public string name = "";
-
 }
 
 public class SoundManager : MonoBehaviour
