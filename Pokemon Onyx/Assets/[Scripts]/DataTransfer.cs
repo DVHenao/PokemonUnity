@@ -7,6 +7,11 @@ public class DataTransfer : MonoBehaviour
 
     public Status playerStatus;
 
+    private void Awake()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {

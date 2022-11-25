@@ -9,7 +9,14 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        if (PlayerPrefs.GetInt("continue") == 1)
+        {
+            LoadPlayer();
+            PlayerPrefs.SetInt("continue", 0);
+
+            Debug.Log("dd");
+        }
     }
 
     // Update is called once per frame

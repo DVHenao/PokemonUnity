@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
     private const string DATA_FILE =  "/playerdata";
+    
 
     public static void SavePlayer(Player player)
     {
