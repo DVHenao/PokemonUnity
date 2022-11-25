@@ -138,6 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillNameText: {fileID: 6010400261240695595}
   costText: {fileID: 6010400261177026306}
+  blue: {fileID: 21300000, guid: 8c87d5819ce879a428dbe05d2ba6e595, type: 3}
+  red: {fileID: 21300000, guid: 3ce5db1bbb1421f479ce76afec3bafe8, type: 3}
 --- !u!1 &6010400261177026304
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad92b7e751b676a499022fb3c8ba1601, type: 3}
-  m_Name: Skill 5
+  m_Name: Bite
   m_EditorClassIdentifier: 
-  skillName: 
-  damageValue: 0
+  skillName: Bite
+  damageValue: 20
+  accuracyRate: 0.7
   healValue: 0
-  manaCost: 0
-  Effect: 
+  manaCost: 10
+  Effect: bites!
   type: 0

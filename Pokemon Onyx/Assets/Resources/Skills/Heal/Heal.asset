@@ -17,5 +17,5 @@ MonoBehaviour:
   accuracyRate: 1
   healValue: 50
   manaCost: 20
-  Effect: Heal~
+  Effect: Curing Player
   type: 1

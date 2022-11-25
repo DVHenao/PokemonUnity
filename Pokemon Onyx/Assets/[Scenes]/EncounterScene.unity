@@ -154,6 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 89901999363991, guid: 8eda74aebbca0c54c8c73730845ed89a, type: 3}
+  - {fileID: 1794787306455674299, guid: 157e066d88d2174499d93ab9f4c7d6f9, type: 3}
+  - {fileID: 7593321184526807471, guid: e7d52ad81c8a42f45a7ac822b650f8fa, type: 3}
+  - {fileID: 9035330924154378397, guid: a44d01d69e44d9642928d2c0df4d12a1, type: 3}
+  - {fileID: 582630641257951969, guid: 16def48c6c900724ca8ef68d97f1fdcf, type: 3}
   battleSceneManager: {fileID: 1226665354}
   Player: {fileID: 2013399753}
   Enemy: {fileID: 0}
@@ -420,7 +424,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Descriptiion Descriptiion Descriptiion
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1911,7 +1915,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1252461769
 RectTransform:

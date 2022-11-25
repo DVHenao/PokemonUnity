@@ -17,5 +17,5 @@ MonoBehaviour:
   accuracyRate: 0.8
   healValue: 0
   manaCost: 5
-  Effect: Jump Kick!
+  Effect: Jumps and Kick!
   type: 0

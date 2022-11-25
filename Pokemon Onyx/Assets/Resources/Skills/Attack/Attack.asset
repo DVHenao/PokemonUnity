@@ -17,5 +17,5 @@ MonoBehaviour:
   accuracyRate: 0.9
   healValue: 0
   manaCost: 0
-  Effect: ' Attack Opponent'
+  Effect: ' Attacks!'
   type: 0

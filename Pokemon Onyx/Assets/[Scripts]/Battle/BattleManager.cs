@@ -40,12 +40,14 @@ public class BattleManager : MonoBehaviour
         {
             GameObject btn = Instantiate(battleSceneManager.SkillButtonPrefab, battleSceneManager.PlayerSkillPannel.transform);
             SkillButtonUI skillBtn = btn.GetComponent<SkillButtonUI>();
+            skillBtn.SetButtonType(SkillButtonUI.ButtonType.ATTACK);
             skillBtn.SetSkillNameText(skill.skillName);
             skillBtn.SetCostText(skill.manaCost.ToString());
             btn.GetComponent<Button>().onClick.AddListener(() =>
             {
                 if (Player.status.Mana >= skill.manaCost)
                 {
+                    battleSceneManager.BattleDescrition.color = Color.green;
                     battleSceneManager.BattleDescrition.text = "Player " + skill.Effect;
                     Player.status.UseMana(skill.manaCost);
                     Enemy.status.Damaged(skill.damageValue);
@@ -59,13 +61,15 @@ public class BattleManager : MonoBehaviour
         {
             GameObject btn = Instantiate(battleSceneManager.SkillButtonPrefab, battleSceneManager.PlayerSkillPannel.transform);
             SkillButtonUI skillBtn = btn.GetComponent<SkillButtonUI>();
+            skillBtn.SetButtonType(SkillButtonUI.ButtonType.HEAL);
             skillBtn.SetSkillNameText(skill.skillName);
             skillBtn.SetCostText(skill.manaCost.ToString());
             btn.GetComponent<Button>().onClick.AddListener(() =>
             {
                 if (Player.status.Mana >= skill.manaCost)
                 {
-                    battleSceneManager.BattleDescrition.text = "Player " + skill.Effect;
+                    battleSceneManager.BattleDescrition.color = Color.green;
+                    battleSceneManager.BattleDescrition.text = skill.Effect;
                     Player.status.UseMana(skill.manaCost);
                     Player.status.Heal(skill.healValue);
                     //battleSceneManager.UpdateStatusUI();

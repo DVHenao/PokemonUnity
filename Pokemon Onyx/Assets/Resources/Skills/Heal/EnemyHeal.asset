@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad92b7e751b676a499022fb3c8ba1601, type: 3}
-  m_Name: Skill 10
+  m_Name: EnemyHeal
   m_EditorClassIdentifier: 
-  skillName: 
+  skillName: EnemyHeal
   damageValue: 0
-  healValue: 0
-  manaCost: 0
-  Effect: 
-  type: 0
+  accuracyRate: 1
+  healValue: 20
+  manaCost: 10
+  Effect: is taking self cure!
+  type: 1
