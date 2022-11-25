@@ -46,6 +46,7 @@ public class EncounterController : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
+            SoundManager.Instance.PlayBgm("MainBgm");
             SceneManager.UnloadSceneAsync("EncounterScene");
  
             PlayerController.encounterActive = false;

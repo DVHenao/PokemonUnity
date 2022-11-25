@@ -154,6 +154,7 @@ public class PlayerController : MonoBehaviour
 
     private void LoadEncounterScene()
     {
+        SoundManager.Instance.PlayBgm("BattleBgm");
         FindObjectOfType<DataTransfer>().SetPlayerStatusForBattle();
         SceneManager.LoadScene("EncounterScene", LoadSceneMode.Additive);
     }

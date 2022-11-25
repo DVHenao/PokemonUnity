@@ -20,12 +20,14 @@ public class MainMenuScript : MonoBehaviour
     public void playGame()
     {
         Debug.Log("pressed");
+        SoundManager.Instance.PlayUI("Click");
         SceneManager.LoadScene("MainGame");
     }
 
     public void quitGame()
     {
         Debug.Log("pressed");
+        SoundManager.Instance.PlayUI("Click");
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
     }

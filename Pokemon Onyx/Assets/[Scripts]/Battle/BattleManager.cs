@@ -109,6 +109,7 @@ public class BattleManager : MonoBehaviour
     {
         if (Enemy.status.HP <= 0)
         {
+            SoundManager.Instance.PlayBgm("MainBgm");
             battleSceneManager.UnLoadScene();
         }
 
