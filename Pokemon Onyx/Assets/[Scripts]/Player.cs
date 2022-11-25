@@ -28,8 +28,14 @@ public class Player : MonoBehaviour
         PlayerData playerData = SaveSystem.LoadPlayer();
         if (playerData != null)
         {
-            Vector3 position = new Vector3(playerData.position[0], playerData.position[1], playerData.position[2]);
+            Vector2 position = new Vector2(playerData.position[0], playerData.position[1]);
             transform.position = position;
+
+            status.HP = playerData.HP;
+            status.MaxHP = playerData.MaxHP;
+            status.Mana = playerData.Mana;
+            status.MaxMana = playerData.MaxMana;
+
         }
     }
 }
