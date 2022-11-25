@@ -106,6 +106,8 @@ public class BattleManager : MonoBehaviour
 
         CurrentTurn = Turn.PLAYER;
         //battleSceneManager.SetTurn(CurrentTurn);
+
+        battleSceneManager.UpdateStatusUI();
     }
 
     private void Update()
@@ -214,6 +216,10 @@ public class BattleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         SoundManager.Instance.PlayBgm("MainBgm");
+        if (Player.status.HP <= 0)
+        {
+            FindObjectOfType<Player>().LoadPlayer();
+        }
         battleSceneManager.UnLoadScene();
     }
 }
