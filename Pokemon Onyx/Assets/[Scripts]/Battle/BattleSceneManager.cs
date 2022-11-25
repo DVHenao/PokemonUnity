@@ -33,32 +33,29 @@ public class BattleSceneManager : MonoBehaviour
 
     public void SetTurn(Turn turn)
     {
-        //switch(turn)
-        //{
-        //    case Turn.PLAYER:
-        //        GameDesc.text = "Player Turn";
-        //        PlayerSkillPannel.SetActive(true);
-        //        EnemySkillPannel.SetActive(false);
-        //        break;
-        //    case Turn.ENEMY:
-        //        GameDesc.text = "Enemy Turn";
-        //        PlayerSkillPannel.SetActive(false);
-        //        EnemySkillPannel.SetActive(true);
-        //        break;
-        //}
+        switch (turn)
+        {
+            case Turn.PLAYER:
+                //GameDesc.text = "Player Turn";
+                PlayerSkillPannel.SetActive(true);
+                //EnemySkillPannel.SetActive(false);
+                break;
+            case Turn.ENEMY:
+                //GameDesc.text = "Enemy Turn";
+                PlayerSkillPannel.SetActive(false);
+                //EnemySkillPannel.SetActive(true);
+                break;
+        }
     }
 
     public void SetClickPannelDisable(Turn turn)
     {
-        //switch (turn)
-        //{
-        //    case Turn.PLAYER:
-        //        PlayerSkillPannel.SetActive(false);
-        //        break;
-        //    case Turn.ENEMY:
-        //        EnemySkillPannel.SetActive(false);
-        //        break;
-        //}
+        switch (turn)
+        {
+            case Turn.PLAYER:
+                PlayerSkillPannel.SetActive(false);
+                break;
+        }
     }
 
     public void UnLoadScene()

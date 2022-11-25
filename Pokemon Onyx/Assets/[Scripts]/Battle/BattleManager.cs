@@ -46,10 +46,10 @@ public class BattleManager : MonoBehaviour
             {
                 if (Player.status.Mana >= skill.manaCost)
                 {
-                    battleSceneManager.BattleDescrition.text = skill.Effect;
+                    battleSceneManager.BattleDescrition.text = "Player " + skill.Effect;
                     Player.status.UseMana(skill.manaCost);
                     Enemy.status.Damaged(skill.damageValue);
-                    battleSceneManager.UpdateStatusUI();
+                    //battleSceneManager.UpdateStatusUI();
                     StartCoroutine(SetTurnSetting());
                 }
             });
@@ -65,10 +65,10 @@ public class BattleManager : MonoBehaviour
             {
                 if (Player.status.Mana >= skill.manaCost)
                 {
-                    battleSceneManager.BattleDescrition.text = skill.Effect;
+                    battleSceneManager.BattleDescrition.text = "Player " + skill.Effect;
                     Player.status.UseMana(skill.manaCost);
                     Player.status.Heal(skill.healValue);
-                    battleSceneManager.UpdateStatusUI();
+                    //battleSceneManager.UpdateStatusUI();
                     StartCoroutine(SetTurnSetting());
                 }
             });
@@ -107,22 +107,26 @@ public class BattleManager : MonoBehaviour
     }
     public IEnumerator SetTurnSetting()
     {
-        //battleSceneManager.SetClickPannelDisable(CurrentTurn);
-        yield return new WaitForSeconds(2.0f);
+        battleSceneManager.SetClickPannelDisable(CurrentTurn);
+        // animation
+        yield return new WaitForSeconds(1.0f);
+        battleSceneManager.UpdateStatusUI();
+        yield return new WaitForSeconds(1.0f);
+        battleSceneManager.BattleDescrition.text = "";
         //battleSceneManager.PlayerDesc.text = "";
         //battleSceneManager.EnemyDesc.text = "";
-        //ChangedTurn();
-        
+        ChangedTurn();
+
     }
 
     public void ChangedTurn()
     {
-        //CurrentTurn = CurrentTurn == Turn.PLAYER ? Turn.ENEMY : Turn.PLAYER;
-        //battleSceneManager.SetTurn(CurrentTurn);
-        //if (CurrentTurn == Turn.ENEMY)
-        //{
-        //    Enemy.ExcuteAI();
-        //    StartCoroutine(SetTurnSetting());
-        //}
+        CurrentTurn = CurrentTurn == Turn.PLAYER ? Turn.ENEMY : Turn.PLAYER;
+        battleSceneManager.SetTurn(CurrentTurn);
+        if (CurrentTurn == Turn.ENEMY)
+        {
+            Enemy.ExcuteAI();
+            StartCoroutine(SetTurnSetting());
+        }
     }
 }

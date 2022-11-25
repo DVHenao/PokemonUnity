@@ -102,8 +102,12 @@ MonoBehaviour:
     MaxHP: 100
     Mana: 100
     MaxMana: 100
-    AttackSkillList: []
-    CureSkillList: []
+    AttackSkillList:
+    - {fileID: 11400000, guid: 1bc8c8b1255964243a4ca60869971bdb, type: 2}
+    - {fileID: 11400000, guid: fcb9aaa0444ce9a4880854909a6e68f8, type: 2}
+    - {fileID: 11400000, guid: faf82b9e52bd64444944e80828ff7041, type: 2}
+    CureSkillList:
+    - {fileID: 11400000, guid: f3e6dfb14ea798e47ab00fde96714952, type: 2}
   Name: Blammo
   battleManager: {fileID: 0}
   currentState: 0

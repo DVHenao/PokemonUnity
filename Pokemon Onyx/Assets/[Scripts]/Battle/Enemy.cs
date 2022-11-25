@@ -21,6 +21,7 @@ public class Enemy : Character
     void Start()
     {
         aIcontroller = new EnemyAIController(this.gameObject);
+        battleManager = FindObjectOfType<BattleManager>();
     }
 
     // Update is called once per frame

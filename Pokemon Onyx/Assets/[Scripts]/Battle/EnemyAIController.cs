@@ -40,9 +40,12 @@ public class EnemyAIController
         int randNum = Random.Range(0, selectedSkills.Count);
         Skill skillPicked = selectedSkills[randNum];
 
-        self.status.Mana -= skillPicked.manaCost;
+        self.battleManager.battleSceneManager.BattleDescrition.text = self.Name + skillPicked.Effect;
 
-        self.battleManager.Player.status.HP -= skillPicked.damageValue;
+        self.status.UseMana(skillPicked.manaCost);
+        //self.status.Mana -= skillPicked.manaCost;
+        self.battleManager.Player.status.Damaged(skillPicked.damageValue);
+        //self.battleManager.Player.status.HP -= skillPicked.damageValue;
 
         return true;
     }
@@ -59,10 +62,10 @@ public class EnemyAIController
         int randNum = Random.Range(0, selectedSkills.Count);
         Skill skillPicked = selectedSkills[randNum];
 
-        self.status.Mana -= skillPicked.manaCost;
-
-
-        self.status.HP += skillPicked.healValue;
+        self.status.UseMana(skillPicked.manaCost);
+        //self.status.Mana -= skillPicked.manaCost;
+        self.status.Heal(skillPicked.healValue);
+        //self.status.HP += skillPicked.healValue;
 
         return true;
     }

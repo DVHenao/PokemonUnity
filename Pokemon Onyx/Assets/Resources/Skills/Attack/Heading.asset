@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad92b7e751b676a499022fb3c8ba1601, type: 3}
-  m_Name: JumpKick
+  m_Name: Heading
   m_EditorClassIdentifier: 
-  skillName: JumpKick
-  damageValue: 15
-  accuracyRate: 0.8
+  skillName: Heading
+  damageValue: 10
+  accuracyRate: 0.9
   healValue: 0
   manaCost: 5
-  Effect: Jump Kick!
+  Effect: is bumping head!
   type: 0
