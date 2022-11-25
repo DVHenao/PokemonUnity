@@ -16,8 +16,11 @@ public class BattleManager : MonoBehaviour
 
     public BattleSceneManager battleSceneManager;
 
+    public Transform EnemyParent;
+
     public Character Player;
     public Enemy Enemy;
+
 
     public Turn CurrentTurn;
 
@@ -28,7 +31,7 @@ public class BattleManager : MonoBehaviour
         Player.status = FindObjectOfType<DataTransfer>().playerStatus;
         
         int random = Random.Range(0, enemyPrefabs.Count);
-        var obj = Instantiate(enemyPrefabs[random]);
+        var obj = Instantiate(enemyPrefabs[random], EnemyParent);
         Enemy = obj.GetComponent<Enemy>();
     }
 
@@ -52,6 +55,7 @@ public class BattleManager : MonoBehaviour
                     Player.status.UseMana(skill.manaCost);
                     Enemy.status.Damaged(skill.damageValue);
                     //battleSceneManager.UpdateStatusUI();
+                    Player.GetComponent<Animator>().Play("Shaking", 0, 0.0f);
                     StartCoroutine(SetTurnSetting());
                 }
             });

@@ -40,6 +40,7 @@ public class EnemyAIController
         int randNum = Random.Range(0, selectedSkills.Count);
         Skill skillPicked = selectedSkills[randNum];
 
+        self.gameObject.GetComponentInParent<Animator>().Play("MonsterShaking", 0, 0.0f);
         self.battleManager.battleSceneManager.BattleDescrition.color = Color.magenta;
         self.battleManager.battleSceneManager.BattleDescrition.text = self.Name + " " + skillPicked.Effect;
 
