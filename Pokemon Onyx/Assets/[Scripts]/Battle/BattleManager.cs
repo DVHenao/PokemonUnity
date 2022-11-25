@@ -110,10 +110,15 @@ public class BattleManager : MonoBehaviour
 
     private void Update()
     {
-        if (Enemy.status.HP <= 0)
+        
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            SoundManager.Instance.PlayBgm("MainBgm");
-            battleSceneManager.UnLoadScene();
+            Player.status.HP = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Enemy.status.HP = 0;
         }
 
     }
@@ -127,7 +132,7 @@ public class BattleManager : MonoBehaviour
         battleSceneManager.UpdateStatusUI();
         yield return new WaitForSeconds(1.0f);
         battleSceneManager.BattleDescrition.text = "";
-        ChangedTurn();
+        CheckResult();
     }
 
     public IEnumerator StartHealSequenc()
@@ -139,7 +144,7 @@ public class BattleManager : MonoBehaviour
         battleSceneManager.UpdateStatusUI();
         yield return new WaitForSeconds(1.0f);
         battleSceneManager.BattleDescrition.text = "";
-        ChangedTurn();
+        CheckResult();
     }
 
     public void ChangedTurn()
@@ -179,5 +184,36 @@ public class BattleManager : MonoBehaviour
 
 
         yield return null;
+    }
+
+    public void CheckResult()
+    {
+        if (Enemy.status.HP <= 0 || Player.status.HP <= 0)
+        {
+            // quit secuence
+            StopAllCoroutines();
+            battleSceneManager.SetClickPannelDisable(Turn.PLAYER);
+
+            if (Enemy.status.HP <= 0)
+            {
+                battleSceneManager.BattleDescrition.text = "Player Win ";
+            }
+            else
+            {
+                battleSceneManager.BattleDescrition.text = "Player Lose";
+            }
+            StartCoroutine(QuitBattleSequence());
+        }
+        else
+        {
+            ChangedTurn();
+        }
+    }
+
+    IEnumerator QuitBattleSequence()
+    {
+        yield return new WaitForSeconds(2.0f);
+        SoundManager.Instance.PlayBgm("MainBgm");
+        battleSceneManager.UnLoadScene();
     }
 }
