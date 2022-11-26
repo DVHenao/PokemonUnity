@@ -108,6 +108,17 @@ public class PlayerController : MonoBehaviour
         animator.SetInteger("direction", (int)playerDirection);
         animator.SetInteger("speed", 1);
 
+        if (Physics2D.OverlapCircle(targetPos, 0.1f, FolliageLayer) != null)
+        {
+            SoundManager.Instance.PlayFX("BushStep", 0.8f);
+        }
+        else
+        {
+            SoundManager.Instance.PlayFX("NormalStep");
+        }
+
+
+
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
@@ -116,6 +127,8 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
         animator.SetInteger("speed", 0);
         isMoving = false;
+
+
     }
 
     private bool IsWalkable(Vector3 targetPos)

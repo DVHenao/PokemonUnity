@@ -15,18 +15,21 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
 
+    private const int AUDIOMAXNUM = 20;
+
     //public Sound[] sounds;
     public List<CustomAudio> backgroundSoundClips;
     public List<CustomAudio> effectSoundClips;
-    public CustomAudio aaa;
 
     public AudioSource bgm1;
     public AudioSource bgm2;
-    public AudioSource UI;
-    public AudioSource FX;
+    public AudioSource[] audioSourceArray;
+    private int sourceIdx = 0;
+    //public AudioSource UI;
+    //public AudioSource FX;
 
     //public AudioSource[] sounds;
-    public List<AudioSource> soundSources;
+    //public List<AudioSource> soundSources;
 
     private void Awake()
     {
@@ -44,8 +47,8 @@ public class SoundManager : MonoBehaviour
         bgm1.volume = 0.0f;
         bgm2.volume = 0.0f;
 
-        UI = gameObject.AddComponent<AudioSource>();
-        FX = gameObject.AddComponent<AudioSource>();
+        //UI = gameObject.AddComponent<AudioSource>();
+        //FX = gameObject.AddComponent<AudioSource>();
         //foreach(var sound in sounds)
         //{
         //    sound.source = gameObject.AddComponent<AudioSource>();
@@ -78,14 +81,49 @@ public class SoundManager : MonoBehaviour
             effectSoundClips.Add(tmp);
         }
 
+        audioSourceArray = new AudioSource[AUDIOMAXNUM];
+        
+        for (int i = 0; i < audioSourceArray.Length; i++)
+        {
+            audioSourceArray[i] = gameObject.AddComponent<AudioSource>();
+        }
 
+        
+        //foreach (AudioSource audioSource in audioSourceArray)
+        //{
+        //    audioSource = gameObject.AddComponent<AudioSource>();
+        //}
 
     }
 
 
-    public void PlayUI(string audioName)
+    //public void PlayUI(string audioName)
+    //{
+    //    UI.Stop();
+    //    //CustomAudio sound = Array.Find(backgroundSoundClips, source => source.name == audioName);
+    //    CustomAudio sound = effectSoundClips.Find(source => source.name == audioName);
+    //    if (sound == null)
+    //    {
+    //        Debug.Log("Sound " + audioName + " is missing");
+    //        return;
+    //    }
+    //    UI.clip = sound.audioClip;
+    //    UI.loop = false;
+    //    UI.Play();
+    //}
+
+    public void PlayFX(string audioName, float volume = 1.0f)
     {
-        UI.Stop();
+        while (audioSourceArray[sourceIdx].isPlaying)
+        {
+            sourceIdx++;
+            if(sourceIdx >= AUDIOMAXNUM)
+            {
+                sourceIdx = 0;
+            }
+        }
+
+        //FX.Stop();
         //CustomAudio sound = Array.Find(backgroundSoundClips, source => source.name == audioName);
         CustomAudio sound = effectSoundClips.Find(source => source.name == audioName);
         if (sound == null)
@@ -93,24 +131,10 @@ public class SoundManager : MonoBehaviour
             Debug.Log("Sound " + audioName + " is missing");
             return;
         }
-        UI.clip = sound.audioClip;
-        UI.loop = false;
-        UI.Play();
-    }
-
-    public void PlayFX(string audioName)
-    {
-        FX.Stop();
-        //CustomAudio sound = Array.Find(backgroundSoundClips, source => source.name == audioName);
-        CustomAudio sound = effectSoundClips.Find(source => source.name == audioName);
-        if (sound == null)
-        {
-            Debug.Log("Sound " + audioName + " is missing");
-            return;
-        }
-        FX.clip = sound.audioClip;
-        FX.loop = false;
-        FX.Play();
+        audioSourceArray[sourceIdx].clip = sound.audioClip;
+        audioSourceArray[sourceIdx].loop = false;
+        audioSourceArray[sourceIdx].pitch = volume;
+        audioSourceArray[sourceIdx].Play();
     }
 
     public void PlayBgm(string audioName, float fadeDuration = 0.1f)
