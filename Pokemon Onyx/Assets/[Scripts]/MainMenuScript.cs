@@ -7,7 +7,12 @@ public class MainMenuScript : MonoBehaviour
 {
 
     public GameObject credit;
-  
+
+    public void Start()
+    {
+        SoundManager.Instance.PlayBgm("TitleBgm");
+    }
+
 
     public void playGame()
     {

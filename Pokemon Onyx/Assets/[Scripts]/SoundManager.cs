@@ -87,7 +87,7 @@ public class SoundManager : MonoBehaviour
     {
         UI.Stop();
         //CustomAudio sound = Array.Find(backgroundSoundClips, source => source.name == audioName);
-        CustomAudio sound = backgroundSoundClips.Find(source => source.name == audioName);
+        CustomAudio sound = effectSoundClips.Find(source => source.name == audioName);
         if (sound == null)
         {
             Debug.Log("Sound " + audioName + " is missing");
@@ -102,7 +102,7 @@ public class SoundManager : MonoBehaviour
     {
         FX.Stop();
         //CustomAudio sound = Array.Find(backgroundSoundClips, source => source.name == audioName);
-        CustomAudio sound = backgroundSoundClips.Find(source => source.name == audioName);
+        CustomAudio sound = effectSoundClips.Find(source => source.name == audioName);
         if (sound == null)
         {
             Debug.Log("Sound " + audioName + " is missing");
