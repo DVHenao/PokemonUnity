@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public Status status;
+
+    public GameObject optionPannel;
+    public Toggle optionToggle;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,10 @@ public class Player : MonoBehaviour
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
+        if (optionToggle.isOn)
+        {
+            optionToggle.isOn = false;
+        }
     }
 
     public void LoadPlayer()
@@ -42,5 +50,23 @@ public class Player : MonoBehaviour
             status.MaxMana = playerData.MaxMana;
 
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void OnClickOption(Toggle toggle)
+    {
+        if(toggle.isOn)
+        {
+            optionPannel.SetActive(true);
+        }
+        else
+        {
+            optionPannel.SetActive(false);
+        }
+
     }
 }
