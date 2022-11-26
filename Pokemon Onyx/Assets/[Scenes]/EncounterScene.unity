@@ -3330,6 +3330,7 @@ MonoBehaviour:
     MaxMana: 0
     AttackSkillList: []
     CureSkillList: []
+    SelectedEffectPrefab: {fileID: 0}
 --- !u!212 &2013399754
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
         {
             LoadPlayer();
             PlayerPrefs.SetInt("continue", 0);
-
-            Debug.Log("dd");
         }
     }
 

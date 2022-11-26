@@ -44,11 +44,12 @@ public class EnemyAIController
         self.battleManager.battleSceneManager.BattleDescrition.color = Color.magenta;
         self.battleManager.battleSceneManager.BattleDescrition.text = self.Name + " " + skillPicked.Effect;
 
+        self.status.SelectedEffectPrefab = skillPicked.EffectPrefab;
         self.status.UseMana(skillPicked.manaCost);
         //self.status.Mana -= skillPicked.manaCost;
         self.battleManager.Player.status.Damaged(skillPicked.damageValue);
         //self.battleManager.Player.status.HP -= skillPicked.damageValue;
-        self.battleManager.StartCoroutine(self.battleManager.StartBattleSequenc());
+        self.battleManager.StartCoroutine(self.battleManager.StartBattleSequenc(skillPicked.type));
 
         return true;
     }
@@ -68,11 +69,12 @@ public class EnemyAIController
         self.battleManager.battleSceneManager.BattleDescrition.color = Color.magenta;
         self.battleManager.battleSceneManager.BattleDescrition.text = self.Name + " " + skillPicked.Effect;
 
+        self.status.SelectedEffectPrefab = skillPicked.EffectPrefab;
         self.status.UseMana(skillPicked.manaCost);
         //self.status.Mana -= skillPicked.manaCost;
         self.status.Heal(skillPicked.healValue);
         //self.status.HP += skillPicked.healValue;
-        self.battleManager.StartCoroutine(self.battleManager.StartHealSequenc());
+        self.battleManager.StartCoroutine(self.battleManager.StartBattleSequenc(skillPicked.type));
         return true;
     }
 }

@@ -14,6 +14,8 @@ public class Status
     public List<Skill> AttackSkillList;
     public List<Skill> CureSkillList;
 
+    public GameObject SelectedEffectPrefab = null;
+
 
     public void Heal(int val)
     {

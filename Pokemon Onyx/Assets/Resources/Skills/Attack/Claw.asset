@@ -18,4 +18,5 @@ MonoBehaviour:
   healValue: 0
   manaCost: 5
   Effect: claws!!
+  EffectPrefab: {fileID: 6021246853026884289, guid: 4f98224bfc675954eb083e91d923b23c, type: 3}
   type: 0

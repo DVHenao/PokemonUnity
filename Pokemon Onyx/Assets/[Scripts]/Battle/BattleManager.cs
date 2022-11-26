@@ -55,11 +55,12 @@ public class BattleManager : MonoBehaviour
                 {
                     battleSceneManager.BattleDescrition.color = Color.green;
                     battleSceneManager.BattleDescrition.text = "Player " + skill.Effect;
+                    Player.status.SelectedEffectPrefab = skill.EffectPrefab;
                     Player.status.UseMana(skill.manaCost);
                     Enemy.status.Damaged(skill.damageValue);
                     //battleSceneManager.UpdateStatusUI();
                     Player.GetComponent<Animator>().Play("Shaking", 0, 0.0f);
-                    StartCoroutine(StartBattleSequenc());
+                    StartCoroutine(StartBattleSequenc(skill.type));
                 }
             });
 
@@ -77,10 +78,11 @@ public class BattleManager : MonoBehaviour
                 {
                     battleSceneManager.BattleDescrition.color = Color.green;
                     battleSceneManager.BattleDescrition.text = skill.Effect;
+                    Player.status.SelectedEffectPrefab = skill.EffectPrefab;
                     Player.status.UseMana(skill.manaCost);
                     Player.status.Heal(skill.healValue);
                     //battleSceneManager.UpdateStatusUI();
-                    StartCoroutine(StartHealSequenc());
+                    StartCoroutine(StartBattleSequenc(skill.type));
                 }
             });
 
@@ -125,24 +127,12 @@ public class BattleManager : MonoBehaviour
 
     }
 
-    public IEnumerator StartBattleSequenc()
+    public IEnumerator StartBattleSequenc(SkillType skillType)
     {
         battleSceneManager.SetClickPannelDisable(CurrentTurn);
         // animation
         yield return new WaitForSeconds(1.0f);
-        PlayHitEffect(CurrentTurn == Turn.PLAYER ? Enemy.transform : Player.transform);
-        battleSceneManager.UpdateStatusUI();
-        yield return new WaitForSeconds(1.0f);
-        battleSceneManager.BattleDescrition.text = "";
-        CheckResult();
-    }
-
-    public IEnumerator StartHealSequenc()
-    {
-        battleSceneManager.SetClickPannelDisable(CurrentTurn);
-        // animation
-        yield return new WaitForSeconds(1.0f);
-        //PlayHitEffect(CurrentTurn == Turn.PLAYER ? Enemy.transform : Player.transform);
+        PlayEffectAnimation(CurrentTurn, skillType);
         battleSceneManager.UpdateStatusUI();
         yield return new WaitForSeconds(1.0f);
         battleSceneManager.BattleDescrition.text = "";
@@ -160,31 +150,46 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void PlayHitEffect(Transform transform)
+    public void PlayEffectAnimation(Turn currentTurn, SkillType skillType)
     {
-        StartCoroutine(HitSequence(transform));
+        Transform transformVal = null;
+        GameObject selectedEffect = null;
+        switch (skillType)
+        {
+            case SkillType.ATTACK:
+                transformVal = currentTurn == Turn.PLAYER ? Enemy.transform : Player.transform;
+                break;
+            case SkillType.HEAL:
+                transformVal = currentTurn == Turn.PLAYER ? Player.transform : Enemy.transform;
+                break;
+
+        }
+        selectedEffect = currentTurn == Turn.PLAYER ? Player.status.SelectedEffectPrefab : Enemy.status.SelectedEffectPrefab;
+        StartCoroutine(AnimationSequence(transformVal, selectedEffect));
     }
 
-    IEnumerator HitSequence(Transform transform)
+    IEnumerator AnimationSequence(Transform transform, GameObject effectPrefab)
     {
-        Vector2 position1 = new Vector2(transform.position.x - 0.3f, transform.position.y + 0.4f);
-        Vector2 position2 = new Vector2(transform.position.x + 0.3f, transform.position.y + 0.4f);
-        Vector2 position3 = new Vector2(transform.position.x, transform.position.y + 0.3f);
+        if (effectPrefab != null)
+        {
+            Vector2 position1 = new Vector2(transform.position.x - 0.3f, transform.position.y + 0.4f);
+            Vector2 position2 = new Vector2(transform.position.x + 0.3f, transform.position.y + 0.4f);
+            Vector2 position3 = new Vector2(transform.position.x, transform.position.y + 0.3f);
 
-        var effectObj = Instantiate(HitEffectPrefab, EffectTransform);
-        effectObj.transform.position = position1;
+            var effectObj = Instantiate(effectPrefab, EffectTransform);
+            effectObj.transform.position = position1;
 
-        yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f);
 
-        effectObj = Instantiate(HitEffectPrefab, EffectTransform);
-        effectObj.transform.position = position2;
+            effectObj = Instantiate(effectPrefab, EffectTransform);
+            effectObj.transform.position = position2;
 
-        yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f);
 
-        effectObj = Instantiate(HitEffectPrefab, EffectTransform);
-        effectObj.transform.position = position3;
+            effectObj = Instantiate(effectPrefab, EffectTransform);
+            effectObj.transform.position = position3;
 
-
+        }
         yield return null;
     }
 

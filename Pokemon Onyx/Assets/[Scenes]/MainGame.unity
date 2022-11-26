@@ -26354,6 +26354,7 @@ MonoBehaviour:
     MaxMana: 0
     AttackSkillList: []
     CureSkillList: []
+    SelectedEffectPrefab: {fileID: 0}
 --- !u!1 &2036961684
 GameObject:
   m_ObjectHideFlags: 0
@@ -34495,7 +34496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
       propertyPath: status.AttackSkillList.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
       propertyPath: status.CureSkillList.Array.data[0]
@@ -34509,6 +34510,34 @@ PrefabInstance:
       propertyPath: status.AttackSkillList.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: f9c3446914c55fc4ea29c33922070258, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: faf82b9e52bd64444944e80828ff7041, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: e7175f643e9b3394e8e465d5be135498, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 57a768d3966fccf47be372f58da02dec, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: fcb9aaa0444ce9a4880854909a6e68f8, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 19c74b0796f37ac428cc882f6543b0bc, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: b605c62dcc13cd94a871aa03deda4a30, type: 2}
+    - target: {fileID: 4830200750072146426, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
+      propertyPath: status.AttackSkillList.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 71a269ea6026f454c8d4553194c0d43b, type: 2}
     - target: {fileID: 5844711826730892266, guid: ccde7f63c1cf35c4492a10eaf5f34a9d, type: 3}
       propertyPath: m_RootOrder
       value: 2

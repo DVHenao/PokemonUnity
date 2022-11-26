@@ -18,4 +18,5 @@ MonoBehaviour:
   healValue: 50
   manaCost: 20
   Effect: Curing Player
+  EffectPrefab: {fileID: 1014976771362796920, guid: 19fc9b559dae42a49bb19964972e9e45, type: 3}
   type: 1

@@ -18,4 +18,5 @@ MonoBehaviour:
   healValue: 0
   manaCost: 5
   Effect: Jumps and Kick!
+  EffectPrefab: {fileID: 5510162164040096284, guid: 11d1a22a3874c924fa866acb1d0d77bb, type: 3}
   type: 0
