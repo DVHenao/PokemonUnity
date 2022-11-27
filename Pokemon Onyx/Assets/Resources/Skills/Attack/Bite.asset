@@ -18,5 +18,6 @@ MonoBehaviour:
   healValue: 0
   manaCost: 10
   Effect: bites!
+  soundName: Slash
   EffectPrefab: {fileID: 4044351023955098832, guid: 920c10457ce7d664cab8b22d76c02157, type: 3}
   type: 0

@@ -56,9 +56,11 @@ public class BattleManager : MonoBehaviour
                     battleSceneManager.BattleDescrition.color = Color.green;
                     battleSceneManager.BattleDescrition.text = "Player " + skill.Effect;
                     Player.status.SelectedEffectPrefab = skill.EffectPrefab;
+                    Player.status.SelectedSoundName = skill.soundName;
                     Player.status.UseMana(skill.manaCost);
                     Enemy.status.Damaged(skill.damageValue);
-                    //battleSceneManager.UpdateStatusUI();
+
+                    SoundManager.Instance.PlayFX("ClickSkill", 0.5f);
                     Player.GetComponent<Animator>().Play("Shaking", 0, 0.0f);
                     StartCoroutine(StartBattleSequenc(skill.type));
                 }
@@ -79,9 +81,11 @@ public class BattleManager : MonoBehaviour
                     battleSceneManager.BattleDescrition.color = Color.green;
                     battleSceneManager.BattleDescrition.text = skill.Effect;
                     Player.status.SelectedEffectPrefab = skill.EffectPrefab;
+                    Player.status.SelectedSoundName = skill.soundName;
                     Player.status.UseMana(skill.manaCost);
                     Player.status.Heal(skill.healValue);
-                    //battleSceneManager.UpdateStatusUI();
+
+                    SoundManager.Instance.PlayFX("ClickSkill", 0.5f);
                     StartCoroutine(StartBattleSequenc(skill.type));
                 }
             });
@@ -154,6 +158,7 @@ public class BattleManager : MonoBehaviour
     {
         Transform transformVal = null;
         GameObject selectedEffect = null;
+        string soundname = "";
         switch (skillType)
         {
             case SkillType.ATTACK:
@@ -165,10 +170,11 @@ public class BattleManager : MonoBehaviour
 
         }
         selectedEffect = currentTurn == Turn.PLAYER ? Player.status.SelectedEffectPrefab : Enemy.status.SelectedEffectPrefab;
-        StartCoroutine(AnimationSequence(transformVal, selectedEffect));
+        soundname = currentTurn == Turn.PLAYER ? Player.status.SelectedSoundName : Enemy.status.SelectedSoundName;
+        StartCoroutine(AnimationSequence(transformVal, selectedEffect, soundname));
     }
 
-    IEnumerator AnimationSequence(Transform transform, GameObject effectPrefab)
+    IEnumerator AnimationSequence(Transform transform, GameObject effectPrefab, string soundName)
     {
         if (effectPrefab != null)
         {
@@ -178,16 +184,19 @@ public class BattleManager : MonoBehaviour
 
             var effectObj = Instantiate(effectPrefab, EffectTransform);
             effectObj.transform.position = position1;
+            SoundManager.Instance.PlayFX(soundName, 0.5f);
 
             yield return new WaitForSeconds(0.1f);
 
             effectObj = Instantiate(effectPrefab, EffectTransform);
             effectObj.transform.position = position2;
+            SoundManager.Instance.PlayFX(soundName, 0.5f);
 
             yield return new WaitForSeconds(0.1f);
 
             effectObj = Instantiate(effectPrefab, EffectTransform);
             effectObj.transform.position = position3;
+            SoundManager.Instance.PlayFX(soundName, 0.5f);
 
         }
         yield return null;
@@ -199,15 +208,18 @@ public class BattleManager : MonoBehaviour
         {
             // quit secuence
             StopAllCoroutines();
+            SoundManager.Instance.PlayBgm("MainBgm");
             battleSceneManager.SetClickPannelDisable(Turn.PLAYER);
 
             if (Enemy.status.HP <= 0)
             {
                 battleSceneManager.BattleDescrition.text = "Player Win ";
+                SoundManager.Instance.PlayFX("Win", 0.5f);
             }
             else
             {
                 battleSceneManager.BattleDescrition.text = "Player Lose";
+                SoundManager.Instance.PlayFX("Lose",0.5f);
             }
             StartCoroutine(QuitBattleSequence());
         }
@@ -220,7 +232,7 @@ public class BattleManager : MonoBehaviour
     IEnumerator QuitBattleSequence()
     {
         yield return new WaitForSeconds(2.0f);
-        SoundManager.Instance.PlayBgm("MainBgm");
+        
         if (Player.status.HP <= 0)
         {
             FindObjectOfType<Player>().LoadPlayer();

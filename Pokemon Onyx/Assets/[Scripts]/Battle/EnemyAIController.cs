@@ -45,6 +45,7 @@ public class EnemyAIController
         self.battleManager.battleSceneManager.BattleDescrition.text = self.Name + " " + skillPicked.Effect;
 
         self.status.SelectedEffectPrefab = skillPicked.EffectPrefab;
+        self.status.SelectedSoundName = skillPicked.soundName;
         self.status.UseMana(skillPicked.manaCost);
         //self.status.Mana -= skillPicked.manaCost;
         self.battleManager.Player.status.Damaged(skillPicked.damageValue);
@@ -70,6 +71,7 @@ public class EnemyAIController
         self.battleManager.battleSceneManager.BattleDescrition.text = self.Name + " " + skillPicked.Effect;
 
         self.status.SelectedEffectPrefab = skillPicked.EffectPrefab;
+        self.status.SelectedSoundName = skillPicked.soundName;
         self.status.UseMana(skillPicked.manaCost);
         //self.status.Mana -= skillPicked.manaCost;
         self.status.Heal(skillPicked.healValue);

@@ -18,7 +18,9 @@ public class Skill :ScriptableObject
     public int healValue;
     public int manaCost;
     public string Effect;
+    public string soundName;
     public GameObject EffectPrefab;
+    
 
 
     public SkillType type;

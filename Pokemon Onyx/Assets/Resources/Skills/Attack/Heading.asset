@@ -18,5 +18,6 @@ MonoBehaviour:
   healValue: 0
   manaCost: 5
   Effect: is bumping head!
+  soundName: Explosion2
   EffectPrefab: {fileID: 3131979496395997941, guid: e8befbffe8a9b97438f28107e0db9775, type: 3}
   type: 0

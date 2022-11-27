@@ -18,5 +18,6 @@ MonoBehaviour:
   healValue: 0
   manaCost: 10
   Effect: is throwing honey!
+  soundName: Explosion1
   EffectPrefab: {fileID: 4760819090498640034, guid: 11d615f42f902cf4ea364a62d1a4d400, type: 3}
   type: 0

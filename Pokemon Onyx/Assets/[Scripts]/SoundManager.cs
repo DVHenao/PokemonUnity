@@ -133,11 +133,11 @@ public class SoundManager : MonoBehaviour
         }
         audioSourceArray[sourceIdx].clip = sound.audioClip;
         audioSourceArray[sourceIdx].loop = false;
-        audioSourceArray[sourceIdx].pitch = volume;
+        audioSourceArray[sourceIdx].volume = volume;
         audioSourceArray[sourceIdx].Play();
     }
 
-    public void PlayBgm(string audioName, float fadeDuration = 0.1f)
+    public void PlayBgm(string audioName, float volume = 1.0f, float fadeDuration = 4.0f)
     {
         if (fadeDuration == 0.0f)
         {
@@ -150,20 +150,20 @@ public class SoundManager : MonoBehaviour
         if (bgm1.isPlaying)
         {
             bgm2.clip = sound.audioClip;
-            StartCoroutine(PlaySoundFadeIn(bgm2, fadeDuration));
+            StartCoroutine(PlaySoundFadeIn(bgm2, fadeDuration, volume));
             StartCoroutine(StopSoundFadeIn(bgm1, fadeDuration));
 
         }
         else if(bgm2.isPlaying)
         {
             bgm1.clip = sound.audioClip;
-            StartCoroutine(PlaySoundFadeIn(bgm1, fadeDuration));
+            StartCoroutine(PlaySoundFadeIn(bgm1, fadeDuration, volume));
             StartCoroutine(StopSoundFadeIn(bgm2, fadeDuration));
         }
         else
         {
             bgm1.clip = sound.audioClip;
-            StartCoroutine(PlaySoundFadeIn(bgm1, fadeDuration));
+            StartCoroutine(PlaySoundFadeIn(bgm1, fadeDuration, volume));
         }
 
         // play clip by fade in
@@ -176,24 +176,25 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    private IEnumerator PlaySoundFadeIn(AudioSource source, float duration)
+    private IEnumerator PlaySoundFadeIn(AudioSource source, float duration, float volume)
     {
-        //float cofactor = 1.0f / (duration * 100.0f);
-        //float cofactor = 1.0f * Time.deltaTime / duration;
-        //source.volume = 0.0f;
+        
         source.loop = true;
         source.Play();
 
-        float factor = 0.01f / (duration * 2.0f);
-
         float tmpVolume = source.volume;
+
+        float factor = (volume-tmpVolume) / (duration * 50);
+
+        
         while(true)
         {
-            yield return new WaitForSeconds(factor);
+            yield return new WaitForSeconds(0.01f);
             tmpVolume += factor;
             source.volume = tmpVolume;
-            if (source.volume >= 1.0f)
+            if (source.volume >= volume)
             {
+                source.volume = volume;
                 break;
             }
         }
@@ -201,17 +202,14 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator StopSoundFadeIn(AudioSource source, float duration)
     {
-        //float cofactor = 1.0f / (duration * 100.0f);
-        //float cofactor = 1.0f * Time.deltaTime / duration;
-        //source.Play();
-        //source.volume = 1.0f;
-
-        float factor = 0.01f / (duration * 2.0f);
 
         float tmpVolume = source.volume;
+        float factor = tmpVolume / (duration * 50);
+
+        
         while (true)
         {
-            yield return new WaitForSeconds(factor);
+            yield return new WaitForSeconds(0.01f);
             tmpVolume -= factor;
             source.volume = tmpVolume;
             if (source.volume <= 0.0f)

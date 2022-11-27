@@ -18,5 +18,6 @@ MonoBehaviour:
   healValue: 0
   manaCost: 5
   Effect: is shining and sleeping
+  soundName: Slash
   EffectPrefab: {fileID: 6787332384786074792, guid: 151ef864eba15454494c09273ab86985, type: 3}
   type: 0

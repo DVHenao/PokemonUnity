@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
                     {
                         StartCoroutine(Move(targetPos));
 
-                        RandGrassEnounter(targetPos);
+                        
 
                     }
                 }
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics2D.OverlapCircle(targetPos, 0.1f, FolliageLayer) != null)
         {
-            SoundManager.Instance.PlayFX("BushStep", 0.8f);
+            SoundManager.Instance.PlayFX("BushStep", 0.5f);
         }
         else
         {
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
         animator.SetInteger("speed", 0);
         isMoving = false;
 
-
+        RandGrassEnounter(targetPos);
     }
 
     private bool IsWalkable(Vector3 targetPos)
@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
             if (encounterRoll == 0)
             {
                 Debug.Log("Encounter!");
+                SoundManager.Instance.PlayFX("Encounter");
                 LoadEncounterScene();
                 encounterActive = true;
 
@@ -167,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
     private void LoadEncounterScene()
     {
-        SoundManager.Instance.PlayBgm("BattleBgm");
+        SoundManager.Instance.PlayBgm("BattleBgm", 0.08f);
         FindObjectOfType<DataTransfer>().SetPlayerStatusForBattle();
         SceneManager.LoadScene("EncounterScene", LoadSceneMode.Additive);
     }

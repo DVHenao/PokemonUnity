@@ -15,6 +15,7 @@ public class Status
     public List<Skill> CureSkillList;
 
     public GameObject SelectedEffectPrefab = null;
+    public string SelectedSoundName = "";
 
 
     public void Heal(int val)

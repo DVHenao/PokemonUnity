@@ -18,5 +18,6 @@ MonoBehaviour:
   healValue: 0
   manaCost: 30
   Effect: is dancing!
+  soundName: Thunder
   EffectPrefab: {fileID: 7681151531471821340, guid: 78a62f7e36ecfaa429665f06cab5cca9, type: 3}
   type: 0

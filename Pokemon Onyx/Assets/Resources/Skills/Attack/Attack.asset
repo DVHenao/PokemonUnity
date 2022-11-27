@@ -18,5 +18,6 @@ MonoBehaviour:
   healValue: 0
   manaCost: 0
   Effect: ' Attacks!'
+  soundName: Explosion1
   EffectPrefab: {fileID: 5965752081347386396, guid: 723e6db041f327642b10f6040a78e58c, type: 3}
   type: 0

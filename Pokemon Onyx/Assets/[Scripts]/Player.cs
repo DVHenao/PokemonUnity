@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     public void SavePlayer()
     {
+        SoundManager.Instance.PlayFX("Click");
         SaveSystem.SavePlayer(this);
         if (optionToggle.isOn)
         {
@@ -54,11 +55,13 @@ public class Player : MonoBehaviour
 
     public void QuitGame()
     {
+        SoundManager.Instance.PlayFX("Click");
         Application.Quit();
     }
 
     public void OnClickOption(Toggle toggle)
     {
+        SoundManager.Instance.PlayFX("Click");
         if(toggle.isOn)
         {
             optionPannel.SetActive(true);
