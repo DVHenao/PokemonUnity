@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public enum Turn
@@ -227,7 +228,15 @@ public class BattleManager : MonoBehaviour
         
         if (Player.status.HP <= 0)
         {
-            FindObjectOfType<Player>().LoadPlayer();
+            if (SaveSystem.DoesSaveExist())
+            {
+                FindObjectOfType<Player>().LoadPlayer();
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+                yield break;
+            }
         }
         FindObjectOfType<PlayerController>().encounterActive = false;
         battleSceneManager.UnLoadScene();
