@@ -17,13 +17,6 @@ public class StatusUI : MonoBehaviour
     [SerializeField]
     private TMPro.TextMeshProUGUI mpText;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void SetName(string name)
     {
         NameText.text = name;

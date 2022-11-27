@@ -174,9 +174,4 @@ public class PlayerController : MonoBehaviour
         encounterActive = true;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(test, 0.1f);
-    }
 }

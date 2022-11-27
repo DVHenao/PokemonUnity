@@ -10,7 +10,6 @@ public class BattleSceneManager : MonoBehaviour
     public StatusUI EnemyStatusUI;
 
     public GameObject PlayerSkillPannel;
-    public GameObject EnemySkillPannel;
 
     public TMPro.TextMeshProUGUI BattleDescrition;
    
@@ -36,14 +35,10 @@ public class BattleSceneManager : MonoBehaviour
         switch (turn)
         {
             case Turn.PLAYER:
-                //GameDesc.text = "Player Turn";
                 PlayerSkillPannel.SetActive(true);
-                //EnemySkillPannel.SetActive(false);
                 break;
             case Turn.ENEMY:
-                //GameDesc.text = "Enemy Turn";
                 PlayerSkillPannel.SetActive(false);
-                //EnemySkillPannel.SetActive(true);
                 break;
         }
     }

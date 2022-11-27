@@ -13,6 +13,8 @@ public class EnemyAIController
         self = selfObject.GetComponent<Enemy>();
     }
 
+
+    // Simple Enemy AI
     public void ExcuteAI()
     {
         switch (self.currentState)
@@ -44,12 +46,12 @@ public class EnemyAIController
         self.battleManager.battleSceneManager.BattleDescrition.color = Color.magenta;
         self.battleManager.battleSceneManager.BattleDescrition.text = self.Name + " " + skillPicked.Effect;
 
+        // for playing VFX
         self.status.SelectedEffectPrefab = skillPicked.EffectPrefab;
+        // for playing SFX
         self.status.SelectedSoundName = skillPicked.soundName;
         self.status.UseMana(skillPicked.manaCost);
-        //self.status.Mana -= skillPicked.manaCost;
         self.battleManager.Player.status.Damaged(skillPicked.damageValue);
-        //self.battleManager.Player.status.HP -= skillPicked.damageValue;
         self.battleManager.StartCoroutine(self.battleManager.StartBattleSequenc(skillPicked.type));
 
         return true;
@@ -70,12 +72,12 @@ public class EnemyAIController
         self.battleManager.battleSceneManager.BattleDescrition.color = Color.magenta;
         self.battleManager.battleSceneManager.BattleDescrition.text = self.Name + " " + skillPicked.Effect;
 
+        // for playing VFX
         self.status.SelectedEffectPrefab = skillPicked.EffectPrefab;
+        // for playing SFX
         self.status.SelectedSoundName = skillPicked.soundName;
         self.status.UseMana(skillPicked.manaCost);
-        //self.status.Mana -= skillPicked.manaCost;
         self.status.Heal(skillPicked.healValue);
-        //self.status.HP += skillPicked.healValue;
         self.battleManager.StartCoroutine(self.battleManager.StartBattleSequenc(skillPicked.type));
         return true;
     }

@@ -10,10 +10,9 @@ public class Player : MonoBehaviour
     public GameObject optionPannel;
     public Toggle optionToggle;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        // for continue game
         if (PlayerPrefs.GetInt("continue") == 1)
         {
             LoadPlayer();
@@ -21,11 +20,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SavePlayer()
     {

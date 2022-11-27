@@ -18,11 +18,10 @@ public class Skill :ScriptableObject
     public int healValue;
     public int manaCost;
     public string Effect;
+    // for playing sound on each skill
     public string soundName;
+    // for playing animation on each skill
     public GameObject EffectPrefab;
-    
-
-
+    // for skill type, Attack or Heal
     public SkillType type;
-
 }

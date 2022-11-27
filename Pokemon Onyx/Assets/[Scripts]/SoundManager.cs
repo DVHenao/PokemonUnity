@@ -13,11 +13,12 @@ public class CustomAudio
 
 public class SoundManager : MonoBehaviour
 {
+    // for Singltone pattern
     public static SoundManager Instance { get; private set; }
 
+    // for playing SFX, each 20 AudioSource can sound at the same time.
     private const int AUDIOMAXNUM = 20;
 
-    //public Sound[] sounds;
     public List<CustomAudio> backgroundSoundClips;
     public List<CustomAudio> effectSoundClips;
 
@@ -25,11 +26,6 @@ public class SoundManager : MonoBehaviour
     public AudioSource bgm2;
     public AudioSource[] audioSourceArray;
     private int sourceIdx = 0;
-    //public AudioSource UI;
-    //public AudioSource FX;
-
-    //public AudioSource[] sounds;
-    //public List<AudioSource> soundSources;
 
     private void Awake()
     {
@@ -47,20 +43,7 @@ public class SoundManager : MonoBehaviour
         bgm1.volume = 0.0f;
         bgm2.volume = 0.0f;
 
-        //UI = gameObject.AddComponent<AudioSource>();
-        //FX = gameObject.AddComponent<AudioSource>();
-        //foreach(var sound in sounds)
-        //{
-        //    sound.source = gameObject.AddComponent<AudioSource>();
-        //    sound.source.clip = sound.clip;
-        //    sound.source.volume = sound.volume;
-        //    sound.source.pitch = sound.pitch;
-        //    sound.source.loop = sound.loop;
-        //}
-        // master volume
-        //AudioListener.volume = 0.02f;
-       
-
+        // loading all sound assets from Resources folder.
         AudioClip[] sounds = Resources.LoadAll<AudioClip>("Sounds/BGM");
 
         foreach (AudioClip sound in sounds)
@@ -88,32 +71,11 @@ public class SoundManager : MonoBehaviour
             audioSourceArray[i] = gameObject.AddComponent<AudioSource>();
         }
 
-        
-        //foreach (AudioSource audioSource in audioSourceArray)
-        //{
-        //    audioSource = gameObject.AddComponent<AudioSource>();
-        //}
-
     }
-
-
-    //public void PlayUI(string audioName)
-    //{
-    //    UI.Stop();
-    //    //CustomAudio sound = Array.Find(backgroundSoundClips, source => source.name == audioName);
-    //    CustomAudio sound = effectSoundClips.Find(source => source.name == audioName);
-    //    if (sound == null)
-    //    {
-    //        Debug.Log("Sound " + audioName + " is missing");
-    //        return;
-    //    }
-    //    UI.clip = sound.audioClip;
-    //    UI.loop = false;
-    //    UI.Play();
-    //}
 
     public void PlayFX(string audioName, float volume = 1.0f)
     {
+        // if this AudioSource is plaing, just use other one.
         while (audioSourceArray[sourceIdx].isPlaying)
         {
             sourceIdx++;
@@ -122,9 +84,6 @@ public class SoundManager : MonoBehaviour
                 sourceIdx = 0;
             }
         }
-
-        //FX.Stop();
-        //CustomAudio sound = Array.Find(backgroundSoundClips, source => source.name == audioName);
         CustomAudio sound = effectSoundClips.Find(source => source.name == audioName);
         if (sound == null)
         {
@@ -165,15 +124,6 @@ public class SoundManager : MonoBehaviour
             bgm1.clip = sound.audioClip;
             StartCoroutine(PlaySoundFadeIn(bgm1, fadeDuration, volume));
         }
-
-        // play clip by fade in
-        
-
-
-        // stop clip if there audio is playing.
-
-        
-        
     }
 
     private IEnumerator PlaySoundFadeIn(AudioSource source, float duration, float volume)
@@ -219,14 +169,5 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
-
-    //public void StopAllSounds()
-    //{
-    //    foreach(var sound in sounds)
-    //    {
-    //        sound.source.Stop();
-    //    }
-    //}
-
 
 }

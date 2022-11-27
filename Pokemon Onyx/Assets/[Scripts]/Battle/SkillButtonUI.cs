@@ -20,11 +20,6 @@ public class SkillButtonUI : MonoBehaviour
     public Sprite blue;
     public Sprite red;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void SetSkillNameText(string text)
     {

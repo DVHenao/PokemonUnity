@@ -2,15 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
 
     public GameObject credit;
 
+    public Button continueButton;
+
     public void Start()
     {
         SoundManager.Instance.PlayBgm("TitleBgm");
+
+        if(!SaveSystem.DoesSaveExist())
+        {
+            continueButton.interactable = false;
+        }
+
     }
 
 

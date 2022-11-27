@@ -41,7 +41,8 @@ public class BattleManager : MonoBehaviour
     
     void Start()
     {
-        
+        // for setting skill button
+        // by using player skill, instantiate buttons, and setting
         foreach (var skill in Player.status.AttackSkillList)
         {
             GameObject btn = Instantiate(battleSceneManager.SkillButtonPrefab, battleSceneManager.PlayerSkillPannel.transform);
@@ -92,49 +93,38 @@ public class BattleManager : MonoBehaviour
 
         }
 
+
+        // setting enemy status
         battleSceneManager.EnemyStatusUI.SetName(Enemy.Name);
         battleSceneManager.EnemyStatusUI.SetHPText(Enemy.status.HP, Enemy.status.MaxHP);
         battleSceneManager.EnemyStatusUI.SetMPText(Enemy.status.Mana, Enemy.status.MaxMana);
 
-
-
-        //foreach (var skill in Enemy.status.AttackSkillList)
-        //{
-        //    GameObject btn = Instantiate(battleSceneManager.SkillButtonPrefab, battleSceneManager.EnemySkillPannel.transform);
-        //    btn.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = skill.skillName;
-        //    btn.GetComponent<Button>().onClick.AddListener(() =>
-        //    {
-        //        battleSceneManager.EnemyDesc.text = skill.Effect;
-        //        Player.status.HP -= skill.damageValue;
-        //        StartCoroutine(SetTurnSetting());
-        //    });
-        //}
-
+        // first turn
         CurrentTurn = Turn.PLAYER;
-        //battleSceneManager.SetTurn(CurrentTurn);
 
+        // Init UI
         battleSceneManager.UpdateStatusUI();
     }
 
     private void Update()
     {
-        
+        // for testing
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Player.status.HP = 0;
+            Player.status.HP = 5;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Enemy.status.HP = 0;
+            Enemy.status.HP = 5;
         }
 
     }
 
+    // When click skill button, It'll work
     public IEnumerator StartBattleSequenc(SkillType skillType)
     {
         battleSceneManager.SetClickPannelDisable(CurrentTurn);
-        // animation
         yield return new WaitForSeconds(1.0f);
         PlayEffectAnimation(CurrentTurn, skillType);
         battleSceneManager.UpdateStatusUI();
@@ -147,13 +137,15 @@ public class BattleManager : MonoBehaviour
     {
         CurrentTurn = CurrentTurn == Turn.PLAYER ? Turn.ENEMY : Turn.PLAYER;
         battleSceneManager.SetTurn(CurrentTurn);
+
+        // if enemy turn, excuting enemy AI
         if (CurrentTurn == Turn.ENEMY)
         {
             Enemy.ExcuteAI();
-            //StartCoroutine(SetTurnSetting());
         }
     }
 
+    // play SFX/VFX
     public void PlayEffectAnimation(Turn currentTurn, SkillType skillType)
     {
         Transform transformVal = null;

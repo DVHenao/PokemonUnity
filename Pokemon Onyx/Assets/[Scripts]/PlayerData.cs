@@ -12,6 +12,7 @@ public class PlayerData
     public int Mana;
     public int MaxMana;
 
+    // set Player to PlayerData for saving
     public PlayerData(Player player)
     {
         position = new float[2];

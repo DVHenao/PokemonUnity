@@ -7,23 +7,13 @@ public class DataTransfer : MonoBehaviour
 
     public Status playerStatus;
 
-    private void Awake()
-    {
-        
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // when player encounter enemy, it'll be called
     public void SetPlayerStatusForBattle()
     {
         playerStatus = GameObject.Find("PlayerCharacter").GetComponent<Player>().status;

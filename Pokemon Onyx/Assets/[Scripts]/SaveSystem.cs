@@ -13,6 +13,7 @@ public static class SaveSystem
         FileStream stream = new FileStream(Application.persistentDataPath + DATA_FILE, FileMode.Create);
 
         PlayerData data = new PlayerData(player);
+        // Erializing for saving Player data
         formatter.Serialize(stream, data);
         stream.Close();
     }
@@ -32,5 +33,15 @@ public static class SaveSystem
             Debug.LogWarning("There's no save data");
             return null;
         }
+    }
+
+    public static bool DoesSaveExist()
+    {
+        if (File.Exists(Application.persistentDataPath + DATA_FILE))
+        {
+            Debug.Log(Application.persistentDataPath);
+            return true;
+        }
+        return false;
     }
 }
