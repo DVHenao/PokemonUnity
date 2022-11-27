@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool isMoving;
     private bool isSprinting;
     private Vector2 input;
-    static public bool encounterActive;
+    public bool encounterActive;
 
     private Animator animator;
 
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Encounter!");
                 SoundManager.Instance.PlayFX("Encounter");
                 LoadEncounterScene();
-                encounterActive = true;
+                
 
             }
         }
@@ -171,6 +171,7 @@ public class PlayerController : MonoBehaviour
         SoundManager.Instance.PlayBgm("BattleBgm", 0.08f);
         FindObjectOfType<DataTransfer>().SetPlayerStatusForBattle();
         SceneManager.LoadScene("EncounterScene", LoadSceneMode.Additive);
+        encounterActive = true;
     }
 
     private void OnDrawGizmos()

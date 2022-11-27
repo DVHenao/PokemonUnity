@@ -237,6 +237,7 @@ public class BattleManager : MonoBehaviour
         {
             FindObjectOfType<Player>().LoadPlayer();
         }
+        FindObjectOfType<PlayerController>().encounterActive = false;
         battleSceneManager.UnLoadScene();
     }
 }

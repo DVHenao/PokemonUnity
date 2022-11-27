@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainLevelManager : MonoBehaviour
 {
@@ -10,6 +11,18 @@ public class MainLevelManager : MonoBehaviour
     void Start()
     {
         SoundManager.Instance.PlayBgm("MainBgm");
+    }
+
+
+    void Update()
+    {
+        if (Input.GetKeyDown("escape"))
+        {
+            SoundManager.Instance.PlayBgm("MainBgm");
+            SceneManager.UnloadSceneAsync("EncounterScene");
+            FindObjectOfType<PlayerController>().encounterActive = false;
+        }
+
     }
 
 }
