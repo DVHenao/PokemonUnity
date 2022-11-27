@@ -48,7 +48,9 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("pressed");
         SoundManager.Instance.PlayFX("Click");
         Application.Quit();
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
     public void ClickSound()
