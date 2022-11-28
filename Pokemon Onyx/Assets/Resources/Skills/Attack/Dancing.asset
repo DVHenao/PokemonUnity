@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dancing
   m_EditorClassIdentifier: 
   skillName: Dancing
-  damageValue: 20
+  damageValue: 45
   accuracyRate: 1
   healValue: 0
   manaCost: 30

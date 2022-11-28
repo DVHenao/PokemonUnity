@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bite
   m_EditorClassIdentifier: 
   skillName: Bite
-  damageValue: 20
+  damageValue: 30
   accuracyRate: 0.7
   healValue: 0
   manaCost: 10

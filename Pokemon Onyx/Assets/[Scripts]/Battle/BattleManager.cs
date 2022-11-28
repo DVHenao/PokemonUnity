@@ -208,6 +208,7 @@ public class BattleManager : MonoBehaviour
             {
                 battleSceneManager.BattleDescrition.text = "Player Win ";
                 SoundManager.Instance.PlayFX("Win", 0.5f);
+                Player.status.Mana += Player.status.Mana/2;
             }
             else
             {
