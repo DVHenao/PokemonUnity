@@ -159,11 +159,10 @@ MonoBehaviour:
   - {fileID: 9035330924154378397, guid: a44d01d69e44d9642928d2c0df4d12a1, type: 3}
   - {fileID: 582630641257951969, guid: 16def48c6c900724ca8ef68d97f1fdcf, type: 3}
   battleSceneManager: {fileID: 1226665354}
+  battleAnimationController: {fileID: 125297891}
   EnemyParent: {fileID: 1101002732}
   Player: {fileID: 2013399753}
   Enemy: {fileID: 0}
-  HitEffectPrefab: {fileID: 5965752081347386396, guid: 723e6db041f327642b10f6040a78e58c, type: 3}
-  EffectTransform: {fileID: 778005281}
   CurrentTurn: 0
 --- !u!4 &26025013
 Transform:
@@ -179,6 +178,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &125297890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125297892}
+  - component: {fileID: 125297891}
+  m_Layer: 0
+  m_Name: AnimationController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &125297891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125297890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbc099a3d88cb441af6611af9f98e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 2013399753}
+  Enemy: {fileID: 0}
+  EffectTransform: {fileID: 778005281}
+--- !u!4 &125297892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125297890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9476437, y: -1.3391848, z: 0.6501179}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &154838611
 GameObject:
@@ -1903,7 +1949,6 @@ MonoBehaviour:
   playerStatusUI: {fileID: 1515822092}
   EnemyStatusUI: {fileID: 1735797842}
   PlayerSkillPannel: {fileID: 1114957418}
-  EnemySkillPannel: {fileID: 0}
   BattleDescrition: {fileID: 386803864}
   SkillButtonPrefab: {fileID: 6010400261119617791, guid: c55869bc08c352049ab4d35846e43e0b, type: 3}
   battleManager: {fileID: 26025012}

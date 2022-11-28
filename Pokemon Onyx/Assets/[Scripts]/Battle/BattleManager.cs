@@ -16,14 +16,14 @@ public class BattleManager : MonoBehaviour
     public List<GameObject> enemyPrefabs;
 
     public BattleSceneManager battleSceneManager;
+    public BattleAnimationController battleAnimationController;
 
     public Transform EnemyParent;
 
     public Character Player;
     public Enemy Enemy;
 
-    public GameObject HitEffectPrefab;
-    public Transform EffectTransform;
+    
 
 
     public Turn CurrentTurn;
@@ -94,7 +94,6 @@ public class BattleManager : MonoBehaviour
 
         }
 
-
         // setting enemy status
         battleSceneManager.EnemyStatusUI.SetName(Enemy.Name);
         battleSceneManager.EnemyStatusUI.SetHPText(Enemy.status.HP, Enemy.status.MaxHP);
@@ -127,7 +126,7 @@ public class BattleManager : MonoBehaviour
     {
         battleSceneManager.SetClickPannelDisable(CurrentTurn);
         yield return new WaitForSeconds(1.0f);
-        PlayEffectAnimation(CurrentTurn, skillType);
+        battleAnimationController.PlayEffectAnimation(CurrentTurn, skillType);
         battleSceneManager.UpdateStatusUI();
         yield return new WaitForSeconds(1.0f);
         battleSceneManager.BattleDescrition.text = "";
@@ -147,53 +146,7 @@ public class BattleManager : MonoBehaviour
     }
 
     // play SFX/VFX
-    public void PlayEffectAnimation(Turn currentTurn, SkillType skillType)
-    {
-        Transform transformVal = null;
-        GameObject selectedEffect = null;
-        string soundname = "";
-        switch (skillType)
-        {
-            case SkillType.ATTACK:
-                transformVal = currentTurn == Turn.PLAYER ? Enemy.transform : Player.transform;
-                break;
-            case SkillType.HEAL:
-                transformVal = currentTurn == Turn.PLAYER ? Player.transform : Enemy.transform;
-                break;
-
-        }
-        selectedEffect = currentTurn == Turn.PLAYER ? Player.status.SelectedEffectPrefab : Enemy.status.SelectedEffectPrefab;
-        soundname = currentTurn == Turn.PLAYER ? Player.status.SelectedSoundName : Enemy.status.SelectedSoundName;
-        StartCoroutine(AnimationSequence(transformVal, selectedEffect, soundname));
-    }
-
-    IEnumerator AnimationSequence(Transform transform, GameObject effectPrefab, string soundName)
-    {
-        if (effectPrefab != null)
-        {
-            Vector2 position1 = new Vector2(transform.position.x - 0.3f, transform.position.y + 0.4f);
-            Vector2 position2 = new Vector2(transform.position.x + 0.3f, transform.position.y + 0.4f);
-            Vector2 position3 = new Vector2(transform.position.x, transform.position.y + 0.3f);
-
-            var effectObj = Instantiate(effectPrefab, EffectTransform);
-            effectObj.transform.position = position1;
-            SoundManager.Instance.PlayFX(soundName, 0.5f);
-
-            yield return new WaitForSeconds(0.1f);
-
-            effectObj = Instantiate(effectPrefab, EffectTransform);
-            effectObj.transform.position = position2;
-            SoundManager.Instance.PlayFX(soundName, 0.5f);
-
-            yield return new WaitForSeconds(0.1f);
-
-            effectObj = Instantiate(effectPrefab, EffectTransform);
-            effectObj.transform.position = position3;
-            SoundManager.Instance.PlayFX(soundName, 0.5f);
-
-        }
-        yield return null;
-    }
+    
 
     public void CheckResult()
     {
@@ -208,7 +161,7 @@ public class BattleManager : MonoBehaviour
             {
                 battleSceneManager.BattleDescrition.text = "Player Win ";
                 SoundManager.Instance.PlayFX("Win", 0.5f);
-                Player.status.Mana += Player.status.Mana/2;
+                Player.status.ChaargeMana(Player.status.Mana / 2);
             }
             else
             {

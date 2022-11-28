@@ -27,6 +27,15 @@ public class Status
         }
     }
 
+    public void ChaargeMana(int val)
+    {
+        Mana += val;
+        if (Mana > MaxMana)
+        {
+            Mana = MaxMana;
+        }
+    }
+
     public void Damaged(int damage)
     {
         HP -= damage;
