@@ -45,6 +45,11 @@ public class Player : MonoBehaviour
             status.MaxMana = playerData.MaxMana;
 
         }
+
+        if (optionToggle.isOn)
+        {
+            optionToggle.isOn = false;
+        }
     }
 
     public void QuitGame()
