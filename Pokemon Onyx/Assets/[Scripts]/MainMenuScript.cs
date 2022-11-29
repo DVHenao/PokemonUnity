@@ -8,8 +8,12 @@ public class MainMenuScript : MonoBehaviour
 {
 
     public GameObject credit;
+    public GameObject LoadingPannel;
+
+    public Slider loadingSlider;
 
     public Button continueButton;
+
 
     public void Start()
     {
@@ -27,14 +31,14 @@ public class MainMenuScript : MonoBehaviour
     {
         Debug.Log("pressed");
         SoundManager.Instance.PlayFX("Click");
-        SceneManager.LoadScene("MainGame");
+        StartCoroutine(LoadScene());
     }
 
     public void Continue()
     {
         PlayerPrefs.SetInt("continue", 1);
         SoundManager.Instance.PlayFX("Click");
-        SceneManager.LoadScene("MainGame");
+        StartCoroutine(LoadScene());
     }
 
     public void Credit()
@@ -56,5 +60,18 @@ public class MainMenuScript : MonoBehaviour
     public void ClickSound()
     {
         SoundManager.Instance.PlayFX("Click");
+    }
+
+    IEnumerator LoadScene()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("MainGame");
+
+        LoadingPannel.SetActive(true);
+
+        while(!operation.isDone)
+        {
+            loadingSlider.value = operation.progress / 0.9f;
+            yield return null;
+        }
     }
 }
