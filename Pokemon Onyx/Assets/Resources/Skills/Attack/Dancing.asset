@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Dancing
   m_EditorClassIdentifier: 
   skillName: Dancing
-  damageValue: 45
+  damageValue: 35
   accuracyRate: 1
   healValue: 0
-  manaCost: 30
+  manaCost: 25
   Effect: is dancing!
   soundName: Thunder
   EffectPrefab: {fileID: 7681151531471821340, guid: 78a62f7e36ecfaa429665f06cab5cca9, type: 3}

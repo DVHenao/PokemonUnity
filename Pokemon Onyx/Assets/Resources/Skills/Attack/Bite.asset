@@ -15,8 +15,8 @@ MonoBehaviour:
   skillName: Bite
   damageValue: 30
   accuracyRate: 0.7
-  healValue: 0
-  manaCost: 10
+  healValue: 10
+  manaCost: 15
   Effect: bites!
   soundName: Slash
   EffectPrefab: {fileID: 4044351023955098832, guid: 920c10457ce7d664cab8b22d76c02157, type: 3}

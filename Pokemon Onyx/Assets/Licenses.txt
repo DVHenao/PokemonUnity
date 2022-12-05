@@ -6,11 +6,11 @@ Woonhak Kong
 
 Citations
 https://cainos.itch.io/pixel-art-top-down-basic/download/eyJpZCI6MTAzMDc1MiwiZXhwaXJlcyI6MTY2MzQ2OTgwOH0%3d.ao3sfx2yWfaXNgTXVLNVDUBe%2fMs%3d
-
+- used for spriting
 https://www.pokemon.com/us/pokemon-virtual-backgrounds/
-
+used for menu background
 https://www.spriters-resource.com/ds_dsi/pokemonplatinum/sheet/18502/
-
+used for battle background
 
 
 

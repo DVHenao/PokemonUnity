@@ -109,14 +109,17 @@ public class BattleManager : MonoBehaviour
     private void Update()
     {
         // for testing
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Application.isEditor)
         {
-            Player.status.HP = 5;
-        }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Player.status.HP = 5;
+            }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Enemy.status.HP = 5;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Enemy.status.HP = 5;
+            }
         }
 
     }
