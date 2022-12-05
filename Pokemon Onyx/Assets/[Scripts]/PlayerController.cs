@@ -92,10 +92,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            LoadEncounterScene();
-        }
+        //if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    LoadEncounterScene();
+        //}
 
     }
 

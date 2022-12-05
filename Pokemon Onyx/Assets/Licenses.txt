@@ -27,3 +27,13 @@ https://karlote.itch.io/star-lighting-effect
 https://www.chosic.com/download-audio/30491/
 https://freesound.org/
 - used for Sounds
+
+
+[Woonhak's works]
+- Player's animation states and transitions.
+- Overall battle system such as skills, enemey AI, Effects, UI, and ETC..
+- Saving and Loading system.
+- Abillty System.
+- Game VFX/SFX
+
+
