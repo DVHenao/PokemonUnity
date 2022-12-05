@@ -109,8 +109,7 @@ public class BattleManager : MonoBehaviour
     private void Update()
     {
         // for testing
-        if (Application.isEditor)
-        {
+
             if (Input.GetKeyDown(KeyCode.P))
             {
                 Player.status.HP = 5;
@@ -120,8 +119,6 @@ public class BattleManager : MonoBehaviour
             {
                 Enemy.status.HP = 5;
             }
-        }
-
     }
 
     // When click skill button, It'll work
