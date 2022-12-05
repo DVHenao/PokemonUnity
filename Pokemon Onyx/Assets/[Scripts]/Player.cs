@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -55,10 +56,8 @@ public class Player : MonoBehaviour
     public void QuitGame()
     {
         SoundManager.Instance.PlayFX("Click");
-        Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        SceneManager.LoadSceneAsync("MainMenu");
+
     }
 
     public void OnClickOption(Toggle toggle)
