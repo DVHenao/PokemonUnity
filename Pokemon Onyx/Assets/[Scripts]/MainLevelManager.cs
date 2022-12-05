@@ -15,15 +15,15 @@ public class MainLevelManager : MonoBehaviour
 
 
     // for testing
-    void Update()
-    {
-        if (Input.GetKeyDown("escape"))
-        {
-            SoundManager.Instance.PlayBgm("MainBgm");
-            SceneManager.UnloadSceneAsync("EncounterScene");
-            FindObjectOfType<PlayerController>().encounterActive = false;
-        }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown("escape"))
+    //    {
+    //        SoundManager.Instance.PlayBgm("MainBgm");
+    //        SceneManager.UnloadSceneAsync("EncounterScene");
+    //        FindObjectOfType<PlayerController>().encounterActive = false;
+    //    }
 
-    }
+    //}
 
 }

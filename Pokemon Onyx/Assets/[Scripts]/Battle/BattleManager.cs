@@ -106,20 +106,20 @@ public class BattleManager : MonoBehaviour
         battleSceneManager.UpdateStatusUI();
     }
 
-    private void Update()
-    {
-        // for testing
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Player.status.HP = 5;
-        }
+    //private void Update()
+    //{
+    //    // for testing
+    //    if (Input.GetKeyDown(KeyCode.P))
+    //    {
+    //        Player.status.HP = 5;
+    //    }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Enemy.status.HP = 5;
-        }
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        Enemy.status.HP = 5;
+    //    }
 
-    }
+    //}
 
     // When click skill button, It'll work
     public IEnumerator StartBattleSequenc(SkillType skillType)
